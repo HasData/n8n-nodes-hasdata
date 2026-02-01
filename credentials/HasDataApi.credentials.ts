@@ -1,5 +1,6 @@
 import {
     IAuthenticateGeneric,
+    ICredentialTestRequest,
     ICredentialType,
     INodeProperties,
 } from 'n8n-workflow';
@@ -25,4 +26,10 @@ export class HasDataApi implements ICredentialType {
             },
         },
     };
+    test?: ICredentialTestRequest = {
+        request: {
+            method: 'GET',
+            url: 'https://api.hasdata.com/user/me',
+        },
+    }
 }
