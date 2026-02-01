@@ -4,8 +4,8 @@ import * as path from 'path';
 import * as yaml from 'js-yaml';
 import { generateDescriptionFile } from './templates/description.template';
 
-const API_DOCS_PATH = path.resolve('/Users/techvice/workspace/scrapeit-cloud/scrapeit-api-gateway-2/api-docs');
-const OUTPUT_PATH = path.resolve('/Users/techvice/workspace/scrapeit-cloud/hasdata-n8n/nodes/HasData/descriptions');
+const API_DOCS_PATH = path.resolve('../scrapeit-api-gateway-2/api-docs');
+const OUTPUT_PATH = path.resolve('../nodes/HasData/descriptions');
 const CONFIG_PATH = path.join(__dirname, 'generator-config.json');
 
 interface GeneratorConfig {

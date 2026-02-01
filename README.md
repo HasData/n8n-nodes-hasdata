@@ -34,7 +34,7 @@ This node supports a wide range of web scraping operations across various platfo
 To use this node, you'll need a **HasData API Key**.
 
 1.  Sign up for an account at [HasData](https://hasdata.com).
-2.  Go to your [Dashboard](https://dashboard.hasdata.com) to find your API Key.
+2.  Go to your [Dashboard](https://app.hasdata.com) to find your API Key.
 3.  In n8n, add a new credential of type **HasData API** and paste your key.
 
 ## Compatibility
