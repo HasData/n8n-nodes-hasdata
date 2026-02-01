@@ -1,0 +1,30 @@
+{
+    "excludeOperations": {
+        "google_serp": [
+            "product"
+        ],
+        "amazon": [
+            "reviews"
+        ]
+    },
+    "operationOrder": {
+        "google_serp": [
+            "serp",
+            "serp_light",
+            "shopping",
+            "news",
+            "short_videos",
+            "events",
+            "ai_mode",
+            "ai_overview",
+            "immersive_product"
+        ],
+        "google_maps": [
+            "search",
+            "reviews",
+            "place",
+            "photos",
+            "contributor_reviews"
+        ]
+    }
+}
