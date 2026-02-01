@@ -1,3 +1,4 @@
+/* eslint-disable */
 
 import * as fs from 'fs';
 import * as path from 'path';
@@ -42,6 +43,7 @@ interface OpenApiParameter {
         items?: {
             type: string;
             enum?: string[];
+            'x-values-mapping'?: Record<string, string>;
         }
     };
     'x-title'?: string;
@@ -255,23 +257,26 @@ function processResource(resourceName: string, resourcePath: string) {
                 const properties = op.requestBody.content['application/json'].schema.properties;
 
                 Object.entries(properties).forEach(([propName, propSchema]: [string, any]) => {
+                    // Handle nested schema property (sometimes present in non-standard/merged specs)
+                    const actualSchema = propSchema.schema || propSchema;
+
                     // Convert requestBody property to OpenApiParameter format
                     const param: OpenApiParameter = {
                         name: propName,
                         in: 'body',
-                        description: propSchema.description,
+                        description: propSchema.description || actualSchema.description,
                         required: propSchema.required || false,
                         schema: {
-                            type: propSchema.type,
-                            default: propSchema.default,
-                            enum: propSchema.enum,
-                            minimum: propSchema.minimum,
-                            maximum: propSchema.maximum,
-                            items: propSchema.items
+                            type: actualSchema.type,
+                            default: actualSchema.default,
+                            enum: actualSchema.enum,
+                            minimum: actualSchema.minimum,
+                            maximum: actualSchema.maximum,
+                            items: actualSchema.items
                         },
-                        'x-title': propSchema['x-title'],
-                        'x-group': propSchema['x-group'],
-                        'x-values-mapping': propSchema['x-values-mapping']
+                        'x-title': propSchema['x-title'] || actualSchema['x-title'],
+                        'x-group': propSchema['x-group'] || actualSchema['x-group'],
+                        'x-values-mapping': propSchema['x-values-mapping'] || actualSchema['x-values-mapping']
                     };
 
                     if (!fieldMap.has(propName)) {
@@ -333,15 +338,37 @@ function processResource(resourceName: string, resourcePath: string) {
 
     const sanitizeName = (name: string) => name.replace(/\[/g, '__opt__').replace(/\]/g, '__clt__');
 
-    // 1. Collect required fields for top level
+    // 1. Collect fields (required and optional)
     for (const [name, { param, ops }] of sortedFields) {
         const n8nName = sanitizeName(name);
+
+        // Determine type, default value, and options
+        let type = mapType(param.schema?.type || 'string');
+        let defaultValue: any = param.schema?.default !== undefined ? param.schema?.default : (param.schema?.type === 'boolean' ? false : '');
+        let enumOptions: any[] | undefined = undefined;
+
+        // Detect multiOptions
+        const isMulti = param.schema?.type === 'array' && (param.schema?.items?.enum || param.schema?.items?.['x-values-mapping']);
+        if (isMulti) {
+            type = 'multiOptions';
+            defaultValue = param.schema?.default !== undefined ? param.schema.default : [];
+            const items = param.schema!.items!;
+            enumOptions = items['x-values-mapping']
+                ? Object.entries(items['x-values-mapping']).map(([key, val]) => ({ name: val as string, value: key }))
+                : items.enum?.map((vValue: any) => ({ name: String(vValue), value: vValue }));
+        } else if (param.schema?.enum || param['x-values-mapping']) {
+            type = 'options';
+            enumOptions = param['x-values-mapping']
+                ? Object.entries(param['x-values-mapping']).map(([key, val]) => ({ name: val, value: key }))
+                : param.schema?.enum?.map(vValue => ({ name: String(vValue), value: vValue }));
+        }
+
         if (param.required) {
             requiredFields.push({
                 displayName: param['x-title'] || name,
                 name: n8nName,
-                type: mapType(param.schema?.type || 'string'),
-                default: param.schema?.default !== undefined ? param.schema?.default : (param.schema?.type === 'boolean' ? false : ''),
+                type,
+                default: defaultValue,
                 description: param.description,
                 displayOptions: {
                     show: {
@@ -349,34 +376,22 @@ function processResource(resourceName: string, resourcePath: string) {
                         operation: ops
                     }
                 },
-                // Enum handling
-                ...((param.schema?.enum || param['x-values-mapping']) ? {
-                    type: 'options',
-                    options: param['x-values-mapping']
-                        ? Object.entries(param['x-values-mapping']).map(([key, val]) => ({ name: val, value: key }))
-                        : param.schema?.enum?.map(v => ({ name: v, value: v }))
-                } : {})
+                ...(enumOptions ? { options: enumOptions } : {})
             });
         } else {
             // Optional field for the collection
             optionalFields.push({
                 displayName: param['x-title'] || name,
                 name: n8nName,
-                type: mapType(param.schema?.type || 'string'),
-                default: param.schema?.default !== undefined ? param.schema?.default : (param.schema?.type === 'boolean' ? false : ''),
+                type,
+                default: defaultValue,
                 description: param.description,
                 displayOptions: {
                     show: {
                         '/operation': ops
                     }
                 },
-                // Enum handling
-                ...((param.schema?.enum || param['x-values-mapping']) ? {
-                    type: 'options',
-                    options: param['x-values-mapping']
-                        ? Object.entries(param['x-values-mapping']).map(([key, val]) => ({ name: val, value: key }))
-                        : param.schema?.enum?.map(v => ({ name: v, value: v }))
-                } : {})
+                ...(enumOptions ? { options: enumOptions } : {})
             });
         }
     }

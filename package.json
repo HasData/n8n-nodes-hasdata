@@ -1,5 +1,8 @@
 {
 	"name": "@hasdata/n8n-nodes-hasdata",
+	"publishConfig": {
+		"access": "public"
+	},
 	"version": "0.1.0",
 	"description": "n8n node for HasData APIs",
 	"license": "MIT",

@@ -3,10 +3,12 @@ import {
     ICredentialTestRequest,
     ICredentialType,
     INodeProperties,
+    Icon,
 } from 'n8n-workflow';
 
 export class HasDataApi implements ICredentialType {
     name = 'hasDataApi';
+    icon: Icon = 'file:hasdata.svg';
     displayName = 'HasData API';
     documentationUrl = 'https://docs.hasdata.com';
     properties: INodeProperties[] = [

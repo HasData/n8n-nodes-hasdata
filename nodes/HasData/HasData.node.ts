@@ -1,9 +1,10 @@
-
+/* eslint-disable n8n-nodes-base/node-param-options-type-unsorted-items */
 import {
     IDataObject,
     IExecuteFunctions,
     IHttpRequestMethods,
     INodeExecutionData,
+    INodeProperties,
     INodeType,
     INodeTypeDescription,
 } from 'n8n-workflow';
@@ -168,7 +169,7 @@ export class HasData implements INodeType {
 
     async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
         const items = this.getInputData();
-        const returnData: IDataObject[] = [];
+        const returnData: INodeExecutionData[] = [];
         const resource = this.getNodeParameter('resource', 0) as string;
         const operation = this.getNodeParameter('operation', 0) as string;
 
@@ -182,7 +183,11 @@ export class HasData implements INodeType {
                 // Endpoint Logic
                 const opKebab = operation.replace(/_/g, '-');
                 if (resource === 'google_serp' || resource === 'google_images') {
-                    endpoint = `/scrape/google/${opKebab}`;
+                    if (operation === 'serp_light') {
+                        endpoint = '/scrape/google-light/serp';
+                    } else {
+                        endpoint = `/scrape/google/${opKebab}`;
+                    }
                 } else if (resource === 'google_travel') {
                     endpoint = `/scrape/google/${opKebab}`;
                 } else if (resource === 'google_maps') {
@@ -199,7 +204,7 @@ export class HasData implements INodeType {
 
                 // Parameter Handling
                 // We need to fetch parameters dynamically based on the resource fields
-                let relevantFields: any[] = [];
+                let relevantFields: INodeProperties[] = [];
                 if (resource === 'airbnb') relevantFields = airbnbFields;
                 else if (resource === 'amazon') relevantFields = amazonFields;
                 else if (resource === 'bing') relevantFields = bingFields;
@@ -230,7 +235,7 @@ export class HasData implements INodeType {
                             const originalName = fieldName.replace(/__opt__/g, '[').replace(/__clt__/g, ']');
                             qs[originalName] = value;
                         }
-                    } catch (e) {
+                    } catch {
                         // Param not displayed/found
                     }
                 }
@@ -244,7 +249,7 @@ export class HasData implements INodeType {
                             qs[originalKey] = additionalFields[key];
                         }
                     }
-                } catch (e) {
+                } catch {
                     // additionalFields not found
                 }
 
@@ -261,17 +266,21 @@ export class HasData implements INodeType {
                     }
                 }
 
-                const response = await this.helpers.requestWithAuthentication.call(this, 'hasDataApi', {
-                    method,
-                    baseURL: 'https://api.hasdata.com',
-                    url: endpoint,
-                    qs,
-                    body: method === 'POST' ? body : undefined,
-                    json: true,
-                });
+                const responseData = await this.helpers.httpRequestWithAuthentication.call(
+                    this,
+                    'hasDataApi',
+                    {
+                        method,
+                        baseURL: 'https://api.hasdata.com',
+                        url: endpoint,
+                        qs,
+                        body: method === 'POST' ? body : undefined,
+                        json: true,
+                    },
+                );
 
                 const executionData = this.helpers.constructExecutionMetaData(
-                    this.helpers.returnJsonArray(response as IDataObject[]),
+                    this.helpers.returnJsonArray(responseData as IDataObject[]),
                     { itemData: { item: i } },
                 );
                 returnData.push(...executionData);
