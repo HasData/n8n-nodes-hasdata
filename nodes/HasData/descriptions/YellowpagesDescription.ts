@@ -25,7 +25,7 @@ export const yellowpagesOperations: INodeProperties[] = [
         "action": "Get YellowPages Search Results"
     }
 ],
-		default: undefined,
+		default: 'place',
 	},
 ];
 

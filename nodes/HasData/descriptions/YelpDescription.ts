@@ -25,7 +25,7 @@ export const yelpOperations: INodeProperties[] = [
         "action": "Get Yelp Search Results"
     }
 ],
-		default: undefined,
+		default: 'place',
 	},
 ];
 

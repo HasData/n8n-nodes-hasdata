@@ -25,7 +25,7 @@ export const zillowOperations: INodeProperties[] = [
         "action": "Get Zillow Property Details"
     }
 ],
-		default: undefined,
+		default: 'listing',
 	},
 ];
 
@@ -189,7 +189,7 @@ export const zillowFields: INodeProperties[] = [
             },
             {
                 "displayName": "Price Min",
-                "name": "price[min]",
+                "name": "price__opt__min__clt__",
                 "type": "number",
                 "default": "",
                 "description": "The minimum price of the listing.",
@@ -203,7 +203,7 @@ export const zillowFields: INodeProperties[] = [
             },
             {
                 "displayName": "Price Max",
-                "name": "price[max]",
+                "name": "price__opt__max__clt__",
                 "type": "number",
                 "default": "",
                 "description": "The maximum price of the listing.",
@@ -217,7 +217,7 @@ export const zillowFields: INodeProperties[] = [
             },
             {
                 "displayName": "Home Types",
-                "name": "homeTypes[]",
+                "name": "homeTypes__opt____clt__",
                 "type": "string",
                 "default": "",
                 "description": "An array of home types to filter the listings.",
@@ -231,7 +231,7 @@ export const zillowFields: INodeProperties[] = [
             },
             {
                 "displayName": "Beds Min",
-                "name": "beds[min]",
+                "name": "beds__opt__min__clt__",
                 "type": "number",
                 "default": "",
                 "description": "The minimum number of bedrooms.",
@@ -245,7 +245,7 @@ export const zillowFields: INodeProperties[] = [
             },
             {
                 "displayName": "Beds Max",
-                "name": "beds[max]",
+                "name": "beds__opt__max__clt__",
                 "type": "number",
                 "default": "",
                 "description": "The maximum number of bedrooms.",
@@ -259,7 +259,7 @@ export const zillowFields: INodeProperties[] = [
             },
             {
                 "displayName": "Baths Min",
-                "name": "baths[min]",
+                "name": "baths__opt__min__clt__",
                 "type": "number",
                 "default": "",
                 "description": "The minimum number of bathrooms.",
@@ -273,7 +273,7 @@ export const zillowFields: INodeProperties[] = [
             },
             {
                 "displayName": "Baths Max",
-                "name": "baths[max]",
+                "name": "baths__opt__max__clt__",
                 "type": "number",
                 "default": "",
                 "description": "The maximum number of bathrooms.",
@@ -287,7 +287,7 @@ export const zillowFields: INodeProperties[] = [
             },
             {
                 "displayName": "Year Built Min",
-                "name": "yearBuilt[min]",
+                "name": "yearBuilt__opt__min__clt__",
                 "type": "number",
                 "default": "",
                 "description": "The minimum year the property was built.",
@@ -301,7 +301,7 @@ export const zillowFields: INodeProperties[] = [
             },
             {
                 "displayName": "Year Built Max",
-                "name": "yearBuilt[max]",
+                "name": "yearBuilt__opt__max__clt__",
                 "type": "number",
                 "default": "",
                 "description": "The maximum year the property was built.",
@@ -315,7 +315,7 @@ export const zillowFields: INodeProperties[] = [
             },
             {
                 "displayName": "Lot Size Min",
-                "name": "lotSize[min]",
+                "name": "lotSize__opt__min__clt__",
                 "type": "number",
                 "default": "",
                 "description": "The minimum lot size.",
@@ -329,7 +329,7 @@ export const zillowFields: INodeProperties[] = [
             },
             {
                 "displayName": "Lot Size Max",
-                "name": "lotSize[max]",
+                "name": "lotSize__opt__max__clt__",
                 "type": "number",
                 "default": "",
                 "description": "The maximum lot size.",
@@ -343,7 +343,7 @@ export const zillowFields: INodeProperties[] = [
             },
             {
                 "displayName": "Square Feet Min",
-                "name": "squareFeet[min]",
+                "name": "squareFeet__opt__min__clt__",
                 "type": "number",
                 "default": "",
                 "description": "The minimum square footage.",
@@ -357,7 +357,7 @@ export const zillowFields: INodeProperties[] = [
             },
             {
                 "displayName": "Square Feet Max",
-                "name": "squareFeet[max]",
+                "name": "squareFeet__opt__max__clt__",
                 "type": "number",
                 "default": "",
                 "description": "The maximum square footage.",
@@ -395,7 +395,7 @@ export const zillowFields: INodeProperties[] = [
             },
             {
                 "displayName": "Listing Publish Options",
-                "name": "listingPublishOptions[]",
+                "name": "listingPublishOptions__opt____clt__",
                 "type": "string",
                 "default": "",
                 "description": "An array of listing publish options.",
@@ -409,7 +409,7 @@ export const zillowFields: INodeProperties[] = [
             },
             {
                 "displayName": "Property Status",
-                "name": "propertyStatus[]",
+                "name": "propertyStatus__opt____clt__",
                 "type": "string",
                 "default": "",
                 "description": "An array of property statuses.",
@@ -423,7 +423,7 @@ export const zillowFields: INodeProperties[] = [
             },
             {
                 "displayName": "Tours",
-                "name": "tours[]",
+                "name": "tours__opt____clt__",
                 "type": "string",
                 "default": "",
                 "description": "An array of tour options.",
@@ -437,7 +437,7 @@ export const zillowFields: INodeProperties[] = [
             },
             {
                 "displayName": "Other Amenities",
-                "name": "otherAmenities[]",
+                "name": "otherAmenities__opt____clt__",
                 "type": "string",
                 "default": "",
                 "description": "An array of other amenities.",
@@ -451,7 +451,7 @@ export const zillowFields: INodeProperties[] = [
             },
             {
                 "displayName": "Views",
-                "name": "views[]",
+                "name": "views__opt____clt__",
                 "type": "string",
                 "default": "",
                 "description": "An array of views.",
@@ -465,7 +465,7 @@ export const zillowFields: INodeProperties[] = [
             },
             {
                 "displayName": "pets",
-                "name": "pets[]",
+                "name": "pets__opt____clt__",
                 "type": "string",
                 "default": "",
                 "description": "An array of pet options.",
@@ -479,7 +479,7 @@ export const zillowFields: INodeProperties[] = [
             },
             {
                 "displayName": "Basement",
-                "name": "basement[]",
+                "name": "basement__opt____clt__",
                 "type": "string",
                 "default": "",
                 "description": "An array of basement options.",

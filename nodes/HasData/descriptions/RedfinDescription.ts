@@ -25,7 +25,7 @@ export const redfinOperations: INodeProperties[] = [
         "action": "Get Redfin Property Details"
     }
 ],
-		default: undefined,
+		default: 'listing',
 	},
 ];
 

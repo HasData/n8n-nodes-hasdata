@@ -25,7 +25,7 @@ export const airbnbOperations: INodeProperties[] = [
         "action": "Get Airbnb Property Details"
     }
 ],
-		default: undefined,
+		default: 'listing',
 	},
 ];
 

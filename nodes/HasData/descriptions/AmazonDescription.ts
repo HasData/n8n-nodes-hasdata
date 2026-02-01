@@ -25,7 +25,7 @@ export const amazonOperations: INodeProperties[] = [
         "action": "Get Amazon Search Results"
     }
 ],
-		default: undefined,
+		default: 'product',
 	},
 ];
 

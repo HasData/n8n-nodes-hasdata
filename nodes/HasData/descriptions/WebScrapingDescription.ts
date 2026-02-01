@@ -19,7 +19,7 @@ export const webScrapingOperations: INodeProperties[] = [
         "action": "Scrape Web Page"
     }
 ],
-		default: undefined,
+		default: 'web_scraping',
 	},
 ];
 

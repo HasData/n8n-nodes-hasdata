@@ -163,7 +163,7 @@ export class HasData implements INodeType {
             ...yelpFields,
             ...zillowFields,
         ],
-		usableAsTool: true,
+        usableAsTool: true,
     };
 
     async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
@@ -227,7 +227,8 @@ export class HasData implements INodeType {
                     try {
                         const value = this.getNodeParameter(fieldName, i);
                         if (value !== '' && value !== undefined && value !== null) {
-                            qs[fieldName] = value;
+                            const originalName = fieldName.replace(/__opt__/g, '[').replace(/__clt__/g, ']');
+                            qs[originalName] = value;
                         }
                     } catch (e) {
                         // Param not displayed/found
@@ -238,7 +239,10 @@ export class HasData implements INodeType {
                 try {
                     const additionalFields = this.getNodeParameter('additionalFields', i) as IDataObject;
                     if (additionalFields && Object.keys(additionalFields).length > 0) {
-                        Object.assign(qs, additionalFields);
+                        for (const key of Object.keys(additionalFields)) {
+                            const originalKey = key.replace(/__opt__/g, '[').replace(/__clt__/g, ']');
+                            qs[originalKey] = additionalFields[key];
+                        }
                     }
                 } catch (e) {
                     // additionalFields not found

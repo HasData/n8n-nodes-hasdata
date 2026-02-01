@@ -19,7 +19,7 @@ export const googleImagesOperations: INodeProperties[] = [
         "action": "Get Image Search Results"
     }
 ],
-		default: undefined,
+		default: 'images',
 	},
 ];
 

@@ -19,7 +19,7 @@ export const googleTrendsOperations: INodeProperties[] = [
         "action": "Get Google Trends Data"
     }
 ],
-		default: undefined,
+		default: 'search',
 	},
 ];
 

@@ -19,7 +19,7 @@ export const googleTravelOperations: INodeProperties[] = [
         "action": "Get Google Flights Results"
     }
 ],
-		default: undefined,
+		default: 'flights',
 	},
 ];
 

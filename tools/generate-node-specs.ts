@@ -4,8 +4,8 @@ import * as path from 'path';
 import * as yaml from 'js-yaml';
 import { generateDescriptionFile } from './templates/description.template';
 
-const API_DOCS_PATH = path.resolve('../scrapeit-api-gateway-2/api-docs');
-const OUTPUT_PATH = path.resolve('../nodes/HasData/descriptions');
+const API_DOCS_PATH = path.resolve(__dirname, '../../scrapeit-api-gateway-2/api-docs');
+const OUTPUT_PATH = path.resolve(__dirname, '../nodes/HasData/descriptions');
 const CONFIG_PATH = path.join(__dirname, 'generator-config.json');
 
 interface GeneratorConfig {
@@ -327,18 +327,19 @@ function processResource(resourceName: string, resourcePath: string) {
     // Let's stick to flat list for simplicity in this generated version, UNLESS x-group says "Advanced".
     // If multiple operations share a collection, the collection options need displayOptions too.
 
-    // Let's try to generate a Flat list but respect `x-title` as Display Name.
-
     // Determine "Advanced" fields to group into a collection?
     const requiredFields: any[] = [];
     const optionalFields: any[] = [];
 
+    const sanitizeName = (name: string) => name.replace(/\[/g, '__opt__').replace(/\]/g, '__clt__');
+
     // 1. Collect required fields for top level
     for (const [name, { param, ops }] of sortedFields) {
+        const n8nName = sanitizeName(name);
         if (param.required) {
             requiredFields.push({
                 displayName: param['x-title'] || name,
-                name: name,
+                name: n8nName,
                 type: mapType(param.schema?.type || 'string'),
                 default: param.schema?.default !== undefined ? param.schema?.default : (param.schema?.type === 'boolean' ? false : ''),
                 description: param.description,
@@ -360,7 +361,7 @@ function processResource(resourceName: string, resourcePath: string) {
             // Optional field for the collection
             optionalFields.push({
                 displayName: param['x-title'] || name,
-                name: name,
+                name: n8nName,
                 type: mapType(param.schema?.type || 'string'),
                 default: param.schema?.default !== undefined ? param.schema?.default : (param.schema?.type === 'boolean' ? false : ''),
                 description: param.description,

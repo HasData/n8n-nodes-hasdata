@@ -25,7 +25,7 @@ export const indeedOperations: INodeProperties[] = [
         "action": "Get Indeed Job Listings"
     }
 ],
-		default: undefined,
+		default: 'job',
 	},
 ];
 

@@ -19,7 +19,7 @@ export const instagramOperations: INodeProperties[] = [
         "action": "Get Instagram Profile"
     }
 ],
-		default: undefined,
+		default: 'profile',
 	},
 ];
 

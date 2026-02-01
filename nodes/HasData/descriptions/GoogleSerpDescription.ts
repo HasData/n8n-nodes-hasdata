@@ -67,7 +67,7 @@ export const googleSerpOperations: INodeProperties[] = [
         "action": "Get Immersive Product Information"
     }
 ],
-		default: undefined,
+		default: 'serp',
 	},
 ];
 

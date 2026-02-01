@@ -19,7 +19,7 @@ export const bingOperations: INodeProperties[] = [
         "action": "Get Bing Search Results"
     }
 ],
-		default: undefined,
+		default: 'serp',
 	},
 ];
 

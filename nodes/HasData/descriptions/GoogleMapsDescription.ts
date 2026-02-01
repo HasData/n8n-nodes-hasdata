@@ -43,7 +43,7 @@ export const googleMapsOperations: INodeProperties[] = [
         "action": "Get Map Contributor Reviews"
     }
 ],
-		default: undefined,
+		default: 'search',
 	},
 ];
 

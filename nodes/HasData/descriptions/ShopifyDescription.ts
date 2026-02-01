@@ -25,7 +25,7 @@ export const shopifyOperations: INodeProperties[] = [
         "action": "Get Shopify Store Products"
     }
 ],
-		default: undefined,
+		default: 'collections',
 	},
 ];
 

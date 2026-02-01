@@ -25,7 +25,7 @@ export const glassdoorOperations: INodeProperties[] = [
         "action": "Get GlassDoor Job Listings"
     }
 ],
-		default: undefined,
+		default: 'job',
 	},
 ];
 
