@@ -28,7 +28,7 @@ export class HasDataApi implements ICredentialType {
             },
         },
     };
-    test?: ICredentialTestRequest = {
+    test: ICredentialTestRequest = {
         request: {
             method: 'GET',
             url: 'https://api.hasdata.com/user/me',
