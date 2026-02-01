@@ -117,6 +117,34 @@ export const webScrapingFields: INodeProperties[] = [
 				},
 				options: [
 					{
+						name: 'US',
+						value: 'US',
+					},
+					{
+						name: 'UK',
+						value: 'UK',
+					},
+					{
+						name: 'DE',
+						value: 'DE',
+					},
+					{
+						name: 'IE',
+						value: 'IE',
+					},
+					{
+						name: 'FR',
+						value: 'FR',
+					},
+					{
+						name: 'IT',
+						value: 'IT',
+					},
+					{
+						name: 'SE',
+						value: 'SE',
+					},
+					{
 						name: 'BR',
 						value: 'BR',
 					},
@@ -125,48 +153,20 @@ export const webScrapingFields: INodeProperties[] = [
 						value: 'CA',
 					},
 					{
-						name: 'DE',
-						value: 'DE',
-					},
-					{
-						name: 'FR',
-						value: 'FR',
-					},
-					{
-						name: 'ID',
-						value: 'ID',
-					},
-					{
-						name: 'IE',
-						value: 'IE',
-					},
-					{
-						name: 'IN',
-						value: 'IN',
-					},
-					{
-						name: 'IT',
-						value: 'IT',
-					},
-					{
 						name: 'JP',
 						value: 'JP',
-					},
-					{
-						name: 'SE',
-						value: 'SE',
 					},
 					{
 						name: 'SG',
 						value: 'SG',
 					},
 					{
-						name: 'UK',
-						value: 'UK',
+						name: 'IN',
+						value: 'IN',
 					},
 					{
-						name: 'US',
-						value: 'US',
+						name: 'ID',
+						value: 'ID',
 					},
 				],
 			},
@@ -409,12 +409,12 @@ export const webScrapingFields: INodeProperties[] = [
 				},
 				options: [
 					{
-						name: 'html',
-						value: 'html',
-					},
-					{
 						name: 'json',
 						value: 'json',
+					},
+					{
+						name: 'html',
+						value: 'html',
 					},
 					{
 						name: 'markdown',

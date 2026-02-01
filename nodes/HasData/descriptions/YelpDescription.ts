@@ -163,6 +163,42 @@ export const yelpFields: INodeProperties[] = [
 				},
 				options: [
 					{
+						name: 'www.yelp.com',
+						value: 'www.yelp.com',
+					},
+					{
+						name: 'www.yelp.co.uk',
+						value: 'www.yelp.co.uk',
+					},
+					{
+						name: 'www.yelp.ca',
+						value: 'www.yelp.ca',
+					},
+					{
+						name: 'www.yelp.com.au',
+						value: 'www.yelp.com.au',
+					},
+					{
+						name: 'ms.yelp.my',
+						value: 'ms.yelp.my',
+					},
+					{
+						name: 'www.yelp.cz',
+						value: 'www.yelp.cz',
+					},
+					{
+						name: 'www.yelp.dk',
+						value: 'www.yelp.dk',
+					},
+					{
+						name: 'www.yelp.de',
+						value: 'www.yelp.de',
+					},
+					{
+						name: 'www.yelp.at',
+						value: 'www.yelp.at',
+					},
+					{
 						name: 'de.yelp.ch',
 						value: 'de.yelp.ch',
 					},
@@ -171,24 +207,48 @@ export const yelpFields: INodeProperties[] = [
 						value: 'en.yelp.be',
 					},
 					{
-						name: 'en.yelp.ch',
-						value: 'en.yelp.ch',
-					},
-					{
 						name: 'en.yelp.com.hk',
 						value: 'en.yelp.com.hk',
-					},
-					{
-						name: 'en.yelp.com.ph',
-						value: 'en.yelp.com.ph',
 					},
 					{
 						name: 'en.yelp.my',
 						value: 'en.yelp.my',
 					},
 					{
-						name: 'fi.yelp.fi',
-						value: 'fi.yelp.fi',
+						name: 'www.yelp.co.nz',
+						value: 'www.yelp.co.nz',
+					},
+					{
+						name: 'en.yelp.com.ph',
+						value: 'en.yelp.com.ph',
+					},
+					{
+						name: 'www.yelp.ie',
+						value: 'www.yelp.ie',
+					},
+					{
+						name: 'www.yelp.com.sg',
+						value: 'www.yelp.com.sg',
+					},
+					{
+						name: 'en.yelp.ch',
+						value: 'en.yelp.ch',
+					},
+					{
+						name: 'www.yelp.com.ar',
+						value: 'www.yelp.com.ar',
+					},
+					{
+						name: 'www.yelp.cl',
+						value: 'www.yelp.cl',
+					},
+					{
+						name: 'www.yelp.es',
+						value: 'www.yelp.es',
+					},
+					{
+						name: 'www.yelp.com.mx',
+						value: 'www.yelp.com.mx',
 					},
 					{
 						name: 'fil.yelp.com.ph',
@@ -203,108 +263,24 @@ export const yelpFields: INodeProperties[] = [
 						value: 'fr.yelp.ca',
 					},
 					{
+						name: 'www.yelp.fr',
+						value: 'www.yelp.fr',
+					},
+					{
 						name: 'fr.yelp.ch',
 						value: 'fr.yelp.ch',
+					},
+					{
+						name: 'www.yelp.it',
+						value: 'www.yelp.it',
 					},
 					{
 						name: 'it.yelp.ch',
 						value: 'it.yelp.ch',
 					},
 					{
-						name: 'ms.yelp.my',
-						value: 'ms.yelp.my',
-					},
-					{
 						name: 'nl.yelp.be',
 						value: 'nl.yelp.be',
-					},
-					{
-						name: 'sv.yelp.fi',
-						value: 'sv.yelp.fi',
-					},
-					{
-						name: 'www.yelp.at',
-						value: 'www.yelp.at',
-					},
-					{
-						name: 'www.yelp.ca',
-						value: 'www.yelp.ca',
-					},
-					{
-						name: 'www.yelp.cl',
-						value: 'www.yelp.cl',
-					},
-					{
-						name: 'www.yelp.co.jp',
-						value: 'www.yelp.co.jp',
-					},
-					{
-						name: 'www.yelp.co.nz',
-						value: 'www.yelp.co.nz',
-					},
-					{
-						name: 'www.yelp.co.uk',
-						value: 'www.yelp.co.uk',
-					},
-					{
-						name: 'www.yelp.com',
-						value: 'www.yelp.com',
-					},
-					{
-						name: 'www.yelp.com.ar',
-						value: 'www.yelp.com.ar',
-					},
-					{
-						name: 'www.yelp.com.au',
-						value: 'www.yelp.com.au',
-					},
-					{
-						name: 'www.yelp.com.br',
-						value: 'www.yelp.com.br',
-					},
-					{
-						name: 'www.yelp.com.mx',
-						value: 'www.yelp.com.mx',
-					},
-					{
-						name: 'www.yelp.com.sg',
-						value: 'www.yelp.com.sg',
-					},
-					{
-						name: 'www.yelp.com.tr',
-						value: 'www.yelp.com.tr',
-					},
-					{
-						name: 'www.yelp.com.tw',
-						value: 'www.yelp.com.tw',
-					},
-					{
-						name: 'www.yelp.cz',
-						value: 'www.yelp.cz',
-					},
-					{
-						name: 'www.yelp.de',
-						value: 'www.yelp.de',
-					},
-					{
-						name: 'www.yelp.dk',
-						value: 'www.yelp.dk',
-					},
-					{
-						name: 'www.yelp.es',
-						value: 'www.yelp.es',
-					},
-					{
-						name: 'www.yelp.fr',
-						value: 'www.yelp.fr',
-					},
-					{
-						name: 'www.yelp.ie',
-						value: 'www.yelp.ie',
-					},
-					{
-						name: 'www.yelp.it',
-						value: 'www.yelp.it',
 					},
 					{
 						name: 'www.yelp.nl',
@@ -319,12 +295,36 @@ export const yelpFields: INodeProperties[] = [
 						value: 'www.yelp.pl',
 					},
 					{
+						name: 'www.yelp.com.br',
+						value: 'www.yelp.com.br',
+					},
+					{
 						name: 'www.yelp.pt',
 						value: 'www.yelp.pt',
 					},
 					{
+						name: 'fi.yelp.fi',
+						value: 'fi.yelp.fi',
+					},
+					{
+						name: 'sv.yelp.fi',
+						value: 'sv.yelp.fi',
+					},
+					{
+						name: 'www.yelp.com.tr',
+						value: 'www.yelp.com.tr',
+					},
+					{
+						name: 'www.yelp.co.jp',
+						value: 'www.yelp.co.jp',
+					},
+					{
 						name: 'zh.yelp.com.hk',
 						value: 'zh.yelp.com.hk',
+					},
+					{
+						name: 'www.yelp.com.tw',
+						value: 'www.yelp.com.tw',
 					},
 				],
 			},

@@ -171,46 +171,6 @@ export const glassdoorFields: INodeProperties[] = [
 				},
 				options: [
 					{
-						name: 'de.glassdoor.ch',
-						value: 'de.glassdoor.ch',
-					},
-					{
-						name: 'fr.glassdoor.be',
-						value: 'fr.glassdoor.be',
-					},
-					{
-						name: 'fr.glassdoor.ca',
-						value: 'fr.glassdoor.ca',
-					},
-					{
-						name: 'fr.glassdoor.ch',
-						value: 'fr.glassdoor.ch',
-					},
-					{
-						name: 'nl.glassdoor.be',
-						value: 'nl.glassdoor.be',
-					},
-					{
-						name: 'www.glassdoor.at',
-						value: 'www.glassdoor.at',
-					},
-					{
-						name: 'www.glassdoor.ca',
-						value: 'www.glassdoor.ca',
-					},
-					{
-						name: 'www.glassdoor.co.in',
-						value: 'www.glassdoor.co.in',
-					},
-					{
-						name: 'www.glassdoor.co.nz',
-						value: 'www.glassdoor.co.nz',
-					},
-					{
-						name: 'www.glassdoor.co.uk',
-						value: 'www.glassdoor.co.uk',
-					},
-					{
 						name: 'www.glassdoor.com.ar',
 						value: 'www.glassdoor.com.ar',
 					},
@@ -219,28 +179,44 @@ export const glassdoorFields: INodeProperties[] = [
 						value: 'www.glassdoor.com.au',
 					},
 					{
+						name: 'www.glassdoor.at',
+						value: 'www.glassdoor.at',
+					},
+					{
+						name: 'nl.glassdoor.be',
+						value: 'nl.glassdoor.be',
+					},
+					{
+						name: 'fr.glassdoor.be',
+						value: 'fr.glassdoor.be',
+					},
+					{
 						name: 'www.glassdoor.com.br',
 						value: 'www.glassdoor.com.br',
 					},
 					{
-						name: 'www.glassdoor.com.hk',
-						value: 'www.glassdoor.com.hk',
+						name: 'www.glassdoor.ca',
+						value: 'www.glassdoor.ca',
 					},
 					{
-						name: 'www.glassdoor.com.mx',
-						value: 'www.glassdoor.com.mx',
+						name: 'fr.glassdoor.ca',
+						value: 'fr.glassdoor.ca',
+					},
+					{
+						name: 'www.glassdoor.fr',
+						value: 'www.glassdoor.fr',
 					},
 					{
 						name: 'www.glassdoor.de',
 						value: 'www.glassdoor.de',
 					},
 					{
-						name: 'www.glassdoor.es',
-						value: 'www.glassdoor.es',
+						name: 'www.glassdoor.com.hk',
+						value: 'www.glassdoor.com.hk',
 					},
 					{
-						name: 'www.glassdoor.fr',
-						value: 'www.glassdoor.fr',
+						name: 'www.glassdoor.co.in',
+						value: 'www.glassdoor.co.in',
 					},
 					{
 						name: 'www.glassdoor.ie',
@@ -251,12 +227,36 @@ export const glassdoorFields: INodeProperties[] = [
 						value: 'www.glassdoor.it',
 					},
 					{
+						name: 'www.glassdoor.com.mx',
+						value: 'www.glassdoor.com.mx',
+					},
+					{
 						name: 'www.glassdoor.nl',
 						value: 'www.glassdoor.nl',
 					},
 					{
+						name: 'www.glassdoor.co.nz',
+						value: 'www.glassdoor.co.nz',
+					},
+					{
 						name: 'www.glassdoor.sg',
 						value: 'www.glassdoor.sg',
+					},
+					{
+						name: 'www.glassdoor.es',
+						value: 'www.glassdoor.es',
+					},
+					{
+						name: 'de.glassdoor.ch',
+						value: 'de.glassdoor.ch',
+					},
+					{
+						name: 'fr.glassdoor.ch',
+						value: 'fr.glassdoor.ch',
+					},
+					{
+						name: 'www.glassdoor.co.uk',
+						value: 'www.glassdoor.co.uk',
 					},
 				],
 			},

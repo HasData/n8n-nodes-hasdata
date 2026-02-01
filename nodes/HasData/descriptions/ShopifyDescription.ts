@@ -96,7 +96,6 @@ export const shopifyFields: INodeProperties[] = [
 					show: {
 						"/operation": [
 							'collections',
-							'products',
 						],
 					},
 				},
@@ -111,6 +110,20 @@ export const shopifyFields: INodeProperties[] = [
 					show: {
 						"/operation": [
 							'collections',
+							'products',
+						],
+					},
+				},
+			},
+			{
+				displayName: 'Results Limit',
+				name: 'limit',
+				type: 'number',
+				default: '',
+				description: 'The maximum number of products to retrieve. Must be between 1 and 250.',
+				displayOptions: {
+					show: {
+						"/operation": [
 							'products',
 						],
 					},

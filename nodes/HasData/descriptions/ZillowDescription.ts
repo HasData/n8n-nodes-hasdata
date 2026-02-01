@@ -85,12 +85,12 @@ export const zillowFields: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'forRent',
-				value: 'forRent',
-			},
-			{
 				name: 'forSale',
 				value: 'forSale',
+			},
+			{
+				name: 'forRent',
+				value: 'forRent',
 			},
 			{
 				name: 'sold',
@@ -148,32 +148,12 @@ export const zillowFields: INodeProperties[] = [
 				},
 				options: [
 					{
-						name: 'bathrooms',
-						value: 'bathrooms',
-					},
-					{
-						name: 'bedrooms',
-						value: 'bedrooms',
+						name: 'verifiedSource',
+						value: 'verifiedSource',
 					},
 					{
 						name: 'homesForYou',
 						value: 'homesForYou',
-					},
-					{
-						name: 'lotSize',
-						value: 'lotSize',
-					},
-					{
-						name: 'newest',
-						value: 'newest',
-					},
-					{
-						name: 'paymentHighToLow',
-						value: 'paymentHighToLow',
-					},
-					{
-						name: 'paymentLowToHigh',
-						value: 'paymentLowToHigh',
 					},
 					{
 						name: 'priceHighToLow',
@@ -184,12 +164,32 @@ export const zillowFields: INodeProperties[] = [
 						value: 'priceLowToHigh',
 					},
 					{
+						name: 'paymentHighToLow',
+						value: 'paymentHighToLow',
+					},
+					{
+						name: 'paymentLowToHigh',
+						value: 'paymentLowToHigh',
+					},
+					{
+						name: 'newest',
+						value: 'newest',
+					},
+					{
+						name: 'bedrooms',
+						value: 'bedrooms',
+					},
+					{
+						name: 'bathrooms',
+						value: 'bathrooms',
+					},
+					{
 						name: 'squareFeet',
 						value: 'squareFeet',
 					},
 					{
-						name: 'verifiedSource',
-						value: 'verifiedSource',
+						name: 'lotSize',
+						value: 'lotSize',
 					},
 				],
 			},
@@ -250,32 +250,32 @@ export const zillowFields: INodeProperties[] = [
 				},
 				options: [
 					{
-						name: 'apartment',
-						value: 'apartment',
-					},
-					{
-						name: 'condo',
-						value: 'condo',
-					},
-					{
 						name: 'house',
 						value: 'house',
 					},
 					{
-						name: 'lot',
-						value: 'lot',
-					},
-					{
-						name: 'manufactured',
-						value: 'manufactured',
+						name: 'townhome',
+						value: 'townhome',
 					},
 					{
 						name: 'multiFamily',
 						value: 'multiFamily',
 					},
 					{
-						name: 'townhome',
-						value: 'townhome',
+						name: 'condo',
+						value: 'condo',
+					},
+					{
+						name: 'lot',
+						value: 'lot',
+					},
+					{
+						name: 'apartment',
+						value: 'apartment',
+					},
+					{
+						name: 'manufactured',
+						value: 'manufactured',
 					},
 				],
 			},
@@ -458,8 +458,20 @@ export const zillowFields: INodeProperties[] = [
 				},
 				options: [
 					{
+						name: 'ownerPosted',
+						value: 'ownerPosted',
+					},
+					{
 						name: 'agentListed',
 						value: 'agentListed',
+					},
+					{
+						name: 'newConstruction',
+						value: 'newConstruction',
+					},
+					{
+						name: 'foreclosures',
+						value: 'foreclosures',
 					},
 					{
 						name: 'auctions',
@@ -468,18 +480,6 @@ export const zillowFields: INodeProperties[] = [
 					{
 						name: 'foreclosed',
 						value: 'foreclosed',
-					},
-					{
-						name: 'foreclosures',
-						value: 'foreclosures',
-					},
-					{
-						name: 'newConstruction',
-						value: 'newConstruction',
-					},
-					{
-						name: 'ownerPosted',
-						value: 'ownerPosted',
 					},
 					{
 						name: 'preForeclosures',
@@ -502,12 +502,12 @@ export const zillowFields: INodeProperties[] = [
 				},
 				options: [
 					{
-						name: 'acceptingBackupOffers',
-						value: 'acceptingBackupOffers',
-					},
-					{
 						name: 'comingSoon',
 						value: 'comingSoon',
+					},
+					{
+						name: 'acceptingBackupOffers',
+						value: 'acceptingBackupOffers',
 					},
 					{
 						name: 'pendingAndUnderContract',
@@ -530,12 +530,12 @@ export const zillowFields: INodeProperties[] = [
 				},
 				options: [
 					{
-						name: '3d',
-						value: '3d',
-					},
-					{
 						name: 'open',
 						value: 'open',
+					},
+					{
+						name: '3d',
+						value: '3d',
 					},
 				],
 			},
@@ -558,32 +558,32 @@ export const zillowFields: INodeProperties[] = [
 						value: 'ac',
 					},
 					{
-						name: 'acceptZillowApplications',
-						value: 'acceptZillowApplications',
-					},
-					{
-						name: 'apartmentCommunity',
-						value: 'apartmentCommunity',
-					},
-					{
-						name: 'incomeRestricted',
-						value: 'incomeRestricted',
-					},
-					{
-						name: 'inUnitLaundry',
-						value: 'inUnitLaundry',
-					},
-					{
-						name: 'onsiteParking',
-						value: 'onsiteParking',
-					},
-					{
 						name: 'pool',
 						value: 'pool',
 					},
 					{
 						name: 'waterfront',
 						value: 'waterfront',
+					},
+					{
+						name: 'onsiteParking',
+						value: 'onsiteParking',
+					},
+					{
+						name: 'inUnitLaundry',
+						value: 'inUnitLaundry',
+					},
+					{
+						name: 'acceptZillowApplications',
+						value: 'acceptZillowApplications',
+					},
+					{
+						name: 'incomeRestricted',
+						value: 'incomeRestricted',
+					},
+					{
+						name: 'apartmentCommunity',
+						value: 'apartmentCommunity',
 					},
 				],
 			},
@@ -634,16 +634,16 @@ export const zillowFields: INodeProperties[] = [
 				},
 				options: [
 					{
-						name: 'allowsCats',
-						value: 'allowsCats',
-					},
-					{
 						name: 'allowsLargeDogs',
 						value: 'allowsLargeDogs',
 					},
 					{
 						name: 'allowsSmallDogs',
 						value: 'allowsSmallDogs',
+					},
+					{
+						name: 'allowsCats',
+						value: 'allowsCats',
 					},
 				],
 			},

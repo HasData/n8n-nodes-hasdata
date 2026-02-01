@@ -85,12 +85,12 @@ export const redfinFields: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'forRent',
-				value: 'forRent',
-			},
-			{
 				name: 'forSale',
 				value: 'forSale',
+			},
+			{
+				name: 'forRent',
+				value: 'forRent',
 			},
 			{
 				name: 'sold',

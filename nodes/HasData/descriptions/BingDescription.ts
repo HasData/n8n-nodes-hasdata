@@ -135,100 +135,68 @@ export const bingFields: INodeProperties[] = [
 				},
 				options: [
 					{
-						name: 'da-dk - Denmark',
-						value: 'da-dk',
-					},
-					{
-						name: 'de-at - Austria',
-						value: 'de-at',
-					},
-					{
-						name: 'de-ch - Switzerland',
-						value: 'de-ch',
-					},
-					{
-						name: 'de-de - Germany',
-						value: 'de-de',
+						name: 'es-ar - Argentina',
+						value: 'es-ar',
 					},
 					{
 						name: 'en-au - Australia',
 						value: 'en-au',
 					},
 					{
-						name: 'en-ca - Canada',
-						value: 'en-ca',
+						name: 'de-at - Austria',
+						value: 'de-at',
 					},
 					{
-						name: 'en-gb - United Kingdom',
-						value: 'en-gb',
-					},
-					{
-						name: 'en-id - Indonesia',
-						value: 'en-id',
-					},
-					{
-						name: 'en-in - India',
-						value: 'en-in',
-					},
-					{
-						name: 'en-my - Malaysia',
-						value: 'en-my',
-					},
-					{
-						name: 'en-nz - New Zealand',
-						value: 'en-nz',
-					},
-					{
-						name: 'en-ph - Republic of the Philippines',
-						value: 'en-ph',
-					},
-					{
-						name: 'en-us - United States',
-						value: 'en-us',
-					},
-					{
-						name: 'en-za - South Africa',
-						value: 'en-za',
-					},
-					{
-						name: 'es-ar - Argentina',
-						value: 'es-ar',
-					},
-					{
-						name: 'es-cl - Chile',
-						value: 'es-cl',
-					},
-					{
-						name: 'es-es - Spain',
-						value: 'es-es',
-					},
-					{
-						name: 'es-mx - Mexico',
-						value: 'es-mx',
-					},
-					{
-						name: 'es-us - United States',
-						value: 'es-us',
-					},
-					{
-						name: 'fi-fi - Finland',
-						value: 'fi-fi',
+						name: 'nl-be - Belgium',
+						value: 'nl-be',
 					},
 					{
 						name: 'fr-be - Belgium',
 						value: 'fr-be',
 					},
 					{
+						name: 'pt-br - Brazil',
+						value: 'pt-br',
+					},
+					{
+						name: 'en-ca - Canada',
+						value: 'en-ca',
+					},
+					{
 						name: 'fr-ca - Canada',
 						value: 'fr-ca',
 					},
 					{
-						name: 'fr-ch - Switzerland',
-						value: 'fr-ch',
+						name: 'es-cl - Chile',
+						value: 'es-cl',
+					},
+					{
+						name: 'da-dk - Denmark',
+						value: 'da-dk',
+					},
+					{
+						name: 'fi-fi - Finland',
+						value: 'fi-fi',
 					},
 					{
 						name: 'fr-fr - France',
 						value: 'fr-fr',
+					},
+					{
+						name: 'de-de - Germany',
+						value: 'de-de',
+					},
+					{
+						name: 'zh-hk - Hong Kong SAR',
+						value: 'zh-hk',
+					},
+					{
+						name: 'en-in - India',
+						value: 'en-in',
+					},
+					{
+						name: 'en-id - Indonesia',
+						value: 'en-id',
 					},
 					{
 						name: 'it-it - Italy',
@@ -243,48 +211,80 @@ export const bingFields: INodeProperties[] = [
 						value: 'ko-kr',
 					},
 					{
-						name: 'nl-be - Belgium',
-						value: 'nl-be',
+						name: 'en-my - Malaysia',
+						value: 'en-my',
+					},
+					{
+						name: 'es-mx - Mexico',
+						value: 'es-mx',
 					},
 					{
 						name: 'nl-nl - Netherlands',
 						value: 'nl-nl',
 					},
 					{
+						name: 'en-nz - New Zealand',
+						value: 'en-nz',
+					},
+					{
 						name: 'no-no - Norway',
 						value: 'no-no',
-					},
-					{
-						name: 'pl-pl - Poland',
-						value: 'pl-pl',
-					},
-					{
-						name: 'pt-br - Brazil',
-						value: 'pt-br',
-					},
-					{
-						name: 'ru-ru - Russia',
-						value: 'ru-ru',
-					},
-					{
-						name: 'sv-se - Sweden',
-						value: 'sv-se',
-					},
-					{
-						name: 'tr-tr - Türkiye',
-						value: 'tr-tr',
 					},
 					{
 						name: 'zh-cn - People\'s republic of China',
 						value: 'zh-cn',
 					},
 					{
-						name: 'zh-hk - Hong Kong SAR',
-						value: 'zh-hk',
+						name: 'pl-pl - Poland',
+						value: 'pl-pl',
+					},
+					{
+						name: 'en-ph - Republic of the Philippines',
+						value: 'en-ph',
+					},
+					{
+						name: 'ru-ru - Russia',
+						value: 'ru-ru',
+					},
+					{
+						name: 'en-za - South Africa',
+						value: 'en-za',
+					},
+					{
+						name: 'es-es - Spain',
+						value: 'es-es',
+					},
+					{
+						name: 'sv-se - Sweden',
+						value: 'sv-se',
+					},
+					{
+						name: 'fr-ch - Switzerland',
+						value: 'fr-ch',
+					},
+					{
+						name: 'de-ch - Switzerland',
+						value: 'de-ch',
 					},
 					{
 						name: 'zh-tw - Taiwan',
 						value: 'zh-tw',
+					},
+					{
+						name: 'tr-tr - Türkiye',
+						value: 'tr-tr',
+					},
+					{
+						name: 'en-gb - United Kingdom',
+						value: 'en-gb',
+					},
+					{
+						name: 'en-us - United States',
+						value: 'en-us',
+					},
+					{
+						name: 'es-us - United States',
+						value: 'es-us',
 					},
 				],
 			},
@@ -307,12 +307,12 @@ export const bingFields: INodeProperties[] = [
 						value: 'ar',
 					},
 					{
-						name: 'at - Austria',
-						value: 'at',
-					},
-					{
 						name: 'au - Australia',
 						value: 'au',
+					},
+					{
+						name: 'at - Austria',
+						value: 'at',
 					},
 					{
 						name: 'be - Belgium',
@@ -327,28 +327,12 @@ export const bingFields: INodeProperties[] = [
 						value: 'ca',
 					},
 					{
-						name: 'ch - Switzerland',
-						value: 'ch',
-					},
-					{
 						name: 'cl - Chile',
 						value: 'cl',
 					},
 					{
-						name: 'cn - People\'s Republic of China',
-						value: 'cn',
-					},
-					{
-						name: 'de - Germany',
-						value: 'de',
-					},
-					{
 						name: 'dk - Denmark',
 						value: 'dk',
-					},
-					{
-						name: 'es - Spain',
-						value: 'es',
 					},
 					{
 						name: 'fi - Finland',
@@ -359,20 +343,20 @@ export const bingFields: INodeProperties[] = [
 						value: 'fr',
 					},
 					{
-						name: 'gb - United Kingdom',
-						value: 'gb',
+						name: 'de - Germany',
+						value: 'de',
 					},
 					{
 						name: 'hk - Hong Kong SAR',
 						value: 'hk',
 					},
 					{
-						name: 'id - Indonesia',
-						value: 'id',
-					},
-					{
 						name: 'in - India',
 						value: 'in',
+					},
+					{
+						name: 'id - Indonesia',
+						value: 'id',
 					},
 					{
 						name: 'it - Italy',
@@ -387,28 +371,28 @@ export const bingFields: INodeProperties[] = [
 						value: 'kr',
 					},
 					{
-						name: 'mx - Mexico',
-						value: 'mx',
-					},
-					{
 						name: 'my - Malaysia',
 						value: 'my',
+					},
+					{
+						name: 'mx - Mexico',
+						value: 'mx',
 					},
 					{
 						name: 'nl - Netherlands',
 						value: 'nl',
 					},
 					{
-						name: 'no - Norway',
-						value: 'no',
-					},
-					{
 						name: 'nz - New Zealand',
 						value: 'nz',
 					},
 					{
-						name: 'ph - Republic of the Philippines',
-						value: 'ph',
+						name: 'no - Norway',
+						value: 'no',
+					},
+					{
+						name: 'cn - People\'s Republic of China',
+						value: 'cn',
 					},
 					{
 						name: 'pl - Poland',
@@ -419,6 +403,10 @@ export const bingFields: INodeProperties[] = [
 						value: 'pt',
 					},
 					{
+						name: 'ph - Republic of the Philippines',
+						value: 'ph',
+					},
+					{
 						name: 'ru - Russia',
 						value: 'ru',
 					},
@@ -427,24 +415,36 @@ export const bingFields: INodeProperties[] = [
 						value: 'sa',
 					},
 					{
+						name: 'za - South Africa',
+						value: 'za',
+					},
+					{
+						name: 'es - Spain',
+						value: 'es',
+					},
+					{
 						name: 'se - Sweden',
 						value: 'se',
 					},
 					{
-						name: 'tr - Türkiye',
-						value: 'tr',
+						name: 'ch - Switzerland',
+						value: 'ch',
 					},
 					{
 						name: 'tw - Taiwan',
 						value: 'tw',
 					},
 					{
-						name: 'us - United States',
-						value: 'us',
+						name: 'tr - Türkiye',
+						value: 'tr',
 					},
 					{
-						name: 'za - South Africa',
-						value: 'za',
+						name: 'gb - United Kingdom',
+						value: 'gb',
+					},
+					{
+						name: 'us - United States',
+						value: 'us',
 					},
 				],
 			},
@@ -463,12 +463,12 @@ export const bingFields: INodeProperties[] = [
 				},
 				options: [
 					{
-						name: 'moderate',
-						value: 'moderate',
-					},
-					{
 						name: 'off',
 						value: 'off',
+					},
+					{
+						name: 'moderate',
+						value: 'moderate',
 					},
 					{
 						name: 'strict',

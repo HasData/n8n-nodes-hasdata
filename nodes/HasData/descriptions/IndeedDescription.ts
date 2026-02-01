@@ -133,12 +133,12 @@ export const indeedFields: INodeProperties[] = [
 				},
 				options: [
 					{
-						name: 'date',
-						value: 'date',
-					},
-					{
 						name: 'relevance',
 						value: 'relevance',
+					},
+					{
+						name: 'date',
+						value: 'date',
 					},
 				],
 			},
@@ -171,28 +171,24 @@ export const indeedFields: INodeProperties[] = [
 				},
 				options: [
 					{
-						name: 'ae.indeed.com',
-						value: 'ae.indeed.com',
-					},
-					{
 						name: 'ar.indeed.com',
 						value: 'ar.indeed.com',
-					},
-					{
-						name: 'at.indeed.com',
-						value: 'at.indeed.com',
 					},
 					{
 						name: 'au.indeed.com',
 						value: 'au.indeed.com',
 					},
 					{
-						name: 'be.indeed.com',
-						value: 'be.indeed.com',
+						name: 'at.indeed.com',
+						value: 'at.indeed.com',
 					},
 					{
 						name: 'bh.indeed.com',
 						value: 'bh.indeed.com',
+					},
+					{
+						name: 'be.indeed.com',
+						value: 'be.indeed.com',
 					},
 					{
 						name: 'br.indeed.com',
@@ -201,10 +197,6 @@ export const indeedFields: INodeProperties[] = [
 					{
 						name: 'ca.indeed.com',
 						value: 'ca.indeed.com',
-					},
-					{
-						name: 'ch.indeed.com',
-						value: 'ch.indeed.com',
 					},
 					{
 						name: 'cl.indeed.com',
@@ -227,10 +219,6 @@ export const indeedFields: INodeProperties[] = [
 						value: 'cz.indeed.com',
 					},
 					{
-						name: 'de.indeed.com',
-						value: 'de.indeed.com',
-					},
-					{
 						name: 'dk.indeed.com',
 						value: 'dk.indeed.com',
 					},
@@ -243,16 +231,16 @@ export const indeedFields: INodeProperties[] = [
 						value: 'eg.indeed.com',
 					},
 					{
-						name: 'es.indeed.com',
-						value: 'es.indeed.com',
-					},
-					{
 						name: 'fi.indeed.com',
 						value: 'fi.indeed.com',
 					},
 					{
 						name: 'fr.indeed.com',
 						value: 'fr.indeed.com',
+					},
+					{
+						name: 'de.indeed.com',
+						value: 'de.indeed.com',
 					},
 					{
 						name: 'gr.indeed.com',
@@ -267,6 +255,10 @@ export const indeedFields: INodeProperties[] = [
 						value: 'hu.indeed.com',
 					},
 					{
+						name: 'in.indeed.com',
+						value: 'in.indeed.com',
+					},
+					{
 						name: 'id.indeed.com',
 						value: 'id.indeed.com',
 					},
@@ -279,20 +271,12 @@ export const indeedFields: INodeProperties[] = [
 						value: 'il.indeed.com',
 					},
 					{
-						name: 'in.indeed.com',
-						value: 'in.indeed.com',
-					},
-					{
 						name: 'it.indeed.com',
 						value: 'it.indeed.com',
 					},
 					{
 						name: 'jp.indeed.com',
 						value: 'jp.indeed.com',
-					},
-					{
-						name: 'kr.indeed.com',
-						value: 'kr.indeed.com',
 					},
 					{
 						name: 'kw.indeed.com',
@@ -303,10 +287,6 @@ export const indeedFields: INodeProperties[] = [
 						value: 'lu.indeed.com',
 					},
 					{
-						name: 'ma.indeed.com',
-						value: 'ma.indeed.com',
-					},
-					{
 						name: 'malaysia.indeed.com',
 						value: 'malaysia.indeed.com',
 					},
@@ -315,24 +295,32 @@ export const indeedFields: INodeProperties[] = [
 						value: 'mx.indeed.com',
 					},
 					{
-						name: 'ng.indeed.com',
-						value: 'ng.indeed.com',
+						name: 'ma.indeed.com',
+						value: 'ma.indeed.com',
 					},
 					{
 						name: 'nl.indeed.com',
 						value: 'nl.indeed.com',
 					},
 					{
-						name: 'no.indeed.com',
-						value: 'no.indeed.com',
-					},
-					{
 						name: 'nz.indeed.com',
 						value: 'nz.indeed.com',
 					},
 					{
+						name: 'ng.indeed.com',
+						value: 'ng.indeed.com',
+					},
+					{
+						name: 'no.indeed.com',
+						value: 'no.indeed.com',
+					},
+					{
 						name: 'om.indeed.com',
 						value: 'om.indeed.com',
+					},
+					{
+						name: 'pk.indeed.com',
+						value: 'pk.indeed.com',
 					},
 					{
 						name: 'pa.indeed.com',
@@ -345,10 +333,6 @@ export const indeedFields: INodeProperties[] = [
 					{
 						name: 'ph.indeed.com',
 						value: 'ph.indeed.com',
-					},
-					{
-						name: 'pk.indeed.com',
-						value: 'pk.indeed.com',
 					},
 					{
 						name: 'pl.indeed.com',
@@ -371,12 +355,32 @@ export const indeedFields: INodeProperties[] = [
 						value: 'sa.indeed.com',
 					},
 					{
+						name: 'sg.indeed.com',
+						value: 'sg.indeed.com',
+					},
+					{
+						name: 'za.indeed.com',
+						value: 'za.indeed.com',
+					},
+					{
+						name: 'kr.indeed.com',
+						value: 'kr.indeed.com',
+					},
+					{
+						name: 'es.indeed.com',
+						value: 'es.indeed.com',
+					},
+					{
 						name: 'se.indeed.com',
 						value: 'se.indeed.com',
 					},
 					{
-						name: 'sg.indeed.com',
-						value: 'sg.indeed.com',
+						name: 'ch.indeed.com',
+						value: 'ch.indeed.com',
+					},
+					{
+						name: 'tw.indeed.com',
+						value: 'tw.indeed.com',
 					},
 					{
 						name: 'th.indeed.com',
@@ -387,16 +391,20 @@ export const indeedFields: INodeProperties[] = [
 						value: 'tr.indeed.com',
 					},
 					{
-						name: 'tw.indeed.com',
-						value: 'tw.indeed.com',
-					},
-					{
 						name: 'ua.indeed.com',
 						value: 'ua.indeed.com',
 					},
 					{
+						name: 'ae.indeed.com',
+						value: 'ae.indeed.com',
+					},
+					{
 						name: 'uk.indeed.com',
 						value: 'uk.indeed.com',
+					},
+					{
+						name: 'www.indeed.com',
+						value: 'www.indeed.com',
 					},
 					{
 						name: 'uy.indeed.com',
@@ -409,14 +417,6 @@ export const indeedFields: INodeProperties[] = [
 					{
 						name: 'vn.indeed.com',
 						value: 'vn.indeed.com',
-					},
-					{
-						name: 'www.indeed.com',
-						value: 'www.indeed.com',
-					},
-					{
-						name: 'za.indeed.com',
-						value: 'za.indeed.com',
 					},
 				],
 			},

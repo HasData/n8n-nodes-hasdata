@@ -86,6 +86,23 @@ export const googleMapsFields: INodeProperties[] = [
 		},
 	},
 	{
+		displayName: 'Google Place ID',
+		name: 'placeId',
+		type: 'string',
+		default: '',
+		description: 'A unique identifier for the place. This ID can be obtained from Google Maps search results.',
+		displayOptions: {
+			show: {
+				resource: [
+					'google_maps',
+				],
+				operation: [
+					'place',
+				],
+			},
+		},
+	},
+	{
 		displayName: 'Search Query',
 		name: 'q',
 		type: 'string',
@@ -116,9 +133,9 @@ export const googleMapsFields: INodeProperties[] = [
 				operation: [
 					'photos',
 					'reviews',
-					'place',
 					'contributor_reviews',
 					'search',
+					'place',
 				],
 			},
 		},
@@ -133,7 +150,6 @@ export const googleMapsFields: INodeProperties[] = [
 					show: {
 						"/operation": [
 							'photos',
-							'reviews',
 						],
 					},
 				},
@@ -148,7 +164,33 @@ export const googleMapsFields: INodeProperties[] = [
 					show: {
 						"/operation": [
 							'photos',
-							'place',
+						],
+					},
+				},
+			},
+			{
+				displayName: 'Data ID',
+				name: 'dataId',
+				type: 'string',
+				default: '',
+				description: 'Google Maps data ID.',
+				displayOptions: {
+					show: {
+						"/operation": [
+							'reviews',
+						],
+					},
+				},
+			},
+			{
+				displayName: 'Place ID',
+				name: 'placeId',
+				type: 'string',
+				default: '',
+				description: 'Unique reference to a place on a Google Map. Either dataId or placeId should be set.',
+				displayOptions: {
+					show: {
+						"/operation": [
 							'reviews',
 						],
 					},
@@ -178,8 +220,21 @@ export const googleMapsFields: INodeProperties[] = [
 					show: {
 						"/operation": [
 							'contributor_reviews',
-							'photos',
 							'reviews',
+						],
+					},
+				},
+			},
+			{
+				displayName: 'Next Page Token',
+				name: 'nextPageToken',
+				type: 'string',
+				default: '',
+				description: 'Token for fetching the next page of photos.',
+				displayOptions: {
+					show: {
+						"/operation": [
+							'photos',
 						],
 					},
 				},
@@ -231,16 +286,20 @@ export const googleMapsFields: INodeProperties[] = [
 				},
 				options: [
 					{
-						name: 'ach - Luo',
-						value: 'ach',
-					},
-					{
 						name: 'af - Afrikaans',
 						value: 'af',
 					},
 					{
 						name: 'ak - Akan',
 						value: 'ak',
+					},
+					{
+						name: 'sq - Albanian',
+						value: 'sq',
+					},
+					{
+						name: 'ws - Samoa',
+						value: 'ws',
 					},
 					{
 						name: 'am - Amharic',
@@ -251,8 +310,16 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'ar',
 					},
 					{
+						name: 'hy - Armenian',
+						value: 'hy',
+					},
+					{
 						name: 'az - Azerbaijani',
 						value: 'az',
+					},
+					{
+						name: 'eu - Basque',
+						value: 'eu',
 					},
 					{
 						name: 'be - Belarusian',
@@ -263,28 +330,36 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'bem',
 					},
 					{
-						name: 'bg - Bulgarian',
-						value: 'bg',
+						name: 'bn - Bengali',
+						value: 'bn',
 					},
 					{
 						name: 'bh - Bihari',
 						value: 'bh',
 					},
 					{
-						name: 'bn - Bengali',
-						value: 'bn',
-					},
-					{
-						name: 'br - Breton',
-						value: 'br',
+						name: 'xx-bork - Bork, bork, bork!',
+						value: 'xx-bork',
 					},
 					{
 						name: 'bs - Bosnian',
 						value: 'bs',
 					},
 					{
+						name: 'br - Breton',
+						value: 'br',
+					},
+					{
+						name: 'bg - Bulgarian',
+						value: 'bg',
+					},
+					{
 						name: 'bt - Bhutanese',
 						value: 'bt',
+					},
+					{
+						name: 'km - Cambodian',
+						value: 'km',
 					},
 					{
 						name: 'ca - Catalan',
@@ -295,40 +370,44 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'chr',
 					},
 					{
-						name: 'ckb - Kurdish (Soranî)',
-						value: 'ckb',
+						name: 'ny - Chichewa',
+						value: 'ny',
+					},
+					{
+						name: 'zh-cn - Chinese (Simplified)',
+						value: 'zh-cn',
+					},
+					{
+						name: 'zh-tw - Chinese (Traditional)',
+						value: 'zh-tw',
+					},
+					{
+						name: 'zh-hk - Hong Kong (Traditional)',
+						value: 'zh-hk',
 					},
 					{
 						name: 'co - Corsican',
 						value: 'co',
 					},
 					{
-						name: 'crs - Seychellois Creole',
-						value: 'crs',
+						name: 'hr - Croatian',
+						value: 'hr',
 					},
 					{
 						name: 'cs - Czech',
 						value: 'cs',
 					},
 					{
-						name: 'cy - Welsh',
-						value: 'cy',
-					},
-					{
 						name: 'da - Danish',
 						value: 'da',
 					},
 					{
-						name: 'de - German',
-						value: 'de',
+						name: 'nl - Dutch',
+						value: 'nl',
 					},
 					{
-						name: 'ee - Ewe',
-						value: 'ee',
-					},
-					{
-						name: 'el - Greek',
-						value: 'el',
+						name: 'xx-elmer - Elmer Fudd',
+						value: 'xx-elmer',
 					},
 					{
 						name: 'en - English',
@@ -339,36 +418,28 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'eo',
 					},
 					{
-						name: 'es - Spanish',
-						value: 'es',
-					},
-					{
-						name: 'es-419 - Spanish (Latin American)',
-						value: 'es-419',
-					},
-					{
 						name: 'et - Estonian',
 						value: 'et',
 					},
 					{
-						name: 'eu - Basque',
-						value: 'eu',
+						name: 'ee - Ewe',
+						value: 'ee',
 					},
 					{
-						name: 'fa - Persian',
-						value: 'fa',
+						name: 'fo - Faroese',
+						value: 'fo',
 					},
 					{
-						name: 'fi - Finnish',
-						value: 'fi',
+						name: 'tl - Filipino',
+						value: 'tl',
 					},
 					{
 						name: 'fil - Filipino',
 						value: 'fil',
 					},
 					{
-						name: 'fo - Faroese',
-						value: 'fo',
+						name: 'fi - Finnish',
+						value: 'fi',
 					},
 					{
 						name: 'fr - French',
@@ -379,20 +450,28 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'fy',
 					},
 					{
-						name: 'ga - Irish',
-						value: 'ga',
-					},
-					{
 						name: 'gaa - Ga',
 						value: 'gaa',
 					},
 					{
-						name: 'gd - Scots Gaelic',
-						value: 'gd',
-					},
-					{
 						name: 'gl - Galician',
 						value: 'gl',
+					},
+					{
+						name: 'ka - Georgian',
+						value: 'ka',
+					},
+					{
+						name: 'de - German',
+						value: 'de',
+					},
+					{
+						name: 'el - Greek',
+						value: 'el',
+					},
+					{
+						name: 'kl - Greenlandic',
+						value: 'kl',
 					},
 					{
 						name: 'gn - Guarani',
@@ -403,6 +482,14 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'gu',
 					},
 					{
+						name: 'xx-hacker - Hacker',
+						value: 'xx-hacker',
+					},
+					{
+						name: 'ht - Haitian Creole',
+						value: 'ht',
+					},
+					{
 						name: 'ha - Hausa',
 						value: 'ha',
 					},
@@ -411,48 +498,40 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'haw',
 					},
 					{
+						name: 'iw - Hebrew',
+						value: 'iw',
+					},
+					{
 						name: 'hi - Hindi',
 						value: 'hi',
-					},
-					{
-						name: 'hr - Croatian',
-						value: 'hr',
-					},
-					{
-						name: 'ht - Haitian Creole',
-						value: 'ht',
 					},
 					{
 						name: 'hu - Hungarian',
 						value: 'hu',
 					},
 					{
-						name: 'hy - Armenian',
-						value: 'hy',
-					},
-					{
-						name: 'ia - Interlingua',
-						value: 'ia',
-					},
-					{
-						name: 'id - Indonesian',
-						value: 'id',
+						name: 'is - Icelandic',
+						value: 'is',
 					},
 					{
 						name: 'ig - Igbo',
 						value: 'ig',
 					},
 					{
-						name: 'is - Icelandic',
-						value: 'is',
+						name: 'id - Indonesian',
+						value: 'id',
+					},
+					{
+						name: 'ia - Interlingua',
+						value: 'ia',
+					},
+					{
+						name: 'ga - Irish',
+						value: 'ga',
 					},
 					{
 						name: 'it - Italian',
 						value: 'it',
-					},
-					{
-						name: 'iw - Hebrew',
-						value: 'iw',
 					},
 					{
 						name: 'ja - Japanese',
@@ -463,28 +542,28 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'jw',
 					},
 					{
-						name: 'ka - Georgian',
-						value: 'ka',
-					},
-					{
-						name: 'kg - Kongo',
-						value: 'kg',
+						name: 'kn - Kannada',
+						value: 'kn',
 					},
 					{
 						name: 'kk - Kazakh',
 						value: 'kk',
 					},
 					{
-						name: 'kl - Greenlandic',
-						value: 'kl',
+						name: 'rw - Kinyarwanda',
+						value: 'rw',
 					},
 					{
-						name: 'km - Cambodian',
-						value: 'km',
+						name: 'rn - Kirundi',
+						value: 'rn',
 					},
 					{
-						name: 'kn - Kannada',
-						value: 'kn',
+						name: 'xx-klingon - Klingon',
+						value: 'xx-klingon',
+					},
+					{
+						name: 'kg - Kongo',
+						value: 'kg',
 					},
 					{
 						name: 'ko - Korean',
@@ -499,76 +578,60 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'ku',
 					},
 					{
+						name: 'ckb - Kurdish (Soranî)',
+						value: 'ckb',
+					},
+					{
 						name: 'ky - Kyrgyz',
 						value: 'ky',
-					},
-					{
-						name: 'la - Latin',
-						value: 'la',
-					},
-					{
-						name: 'lg - Luganda',
-						value: 'lg',
-					},
-					{
-						name: 'ln - Lingala',
-						value: 'ln',
 					},
 					{
 						name: 'lo - Laothian',
 						value: 'lo',
 					},
 					{
-						name: 'loz - Lozi',
-						value: 'loz',
-					},
-					{
-						name: 'lt - Lithuanian',
-						value: 'lt',
-					},
-					{
-						name: 'lua - Tshiluba',
-						value: 'lua',
+						name: 'la - Latin',
+						value: 'la',
 					},
 					{
 						name: 'lv - Latvian',
 						value: 'lv',
 					},
 					{
-						name: 'mfe - Mauritian Creole',
-						value: 'mfe',
+						name: 'ln - Lingala',
+						value: 'ln',
 					},
 					{
-						name: 'mg - Malagasy',
-						value: 'mg',
+						name: 'lt - Lithuanian',
+						value: 'lt',
 					},
 					{
-						name: 'mi - Maori',
-						value: 'mi',
+						name: 'loz - Lozi',
+						value: 'loz',
+					},
+					{
+						name: 'lg - Luganda',
+						value: 'lg',
+					},
+					{
+						name: 'ach - Luo',
+						value: 'ach',
 					},
 					{
 						name: 'mk - Macedonian',
 						value: 'mk',
 					},
 					{
+						name: 'mg - Malagasy',
+						value: 'mg',
+					},
+					{
+						name: 'my - Myanmar',
+						value: 'my',
+					},
+					{
 						name: 'ml - Malayalam',
 						value: 'ml',
-					},
-					{
-						name: 'mn - Mongolian',
-						value: 'mn',
-					},
-					{
-						name: 'mo - Moldavian',
-						value: 'mo',
-					},
-					{
-						name: 'mr - Marathi',
-						value: 'mr',
-					},
-					{
-						name: 'ms - Malay',
-						value: 'ms',
 					},
 					{
 						name: 'mt - Maltese',
@@ -579,64 +642,80 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'mv',
 					},
 					{
-						name: 'my - Myanmar',
-						value: 'my',
+						name: 'mi - Maori',
+						value: 'mi',
+					},
+					{
+						name: 'mr - Marathi',
+						value: 'mr',
+					},
+					{
+						name: 'mfe - Mauritian Creole',
+						value: 'mfe',
+					},
+					{
+						name: 'mo - Moldavian',
+						value: 'mo',
+					},
+					{
+						name: 'mn - Mongolian',
+						value: 'mn',
+					},
+					{
+						name: 'ms - Malay',
+						value: 'ms',
+					},
+					{
+						name: 'sr-me - Montenegrin',
+						value: 'sr-me',
 					},
 					{
 						name: 'ne - Nepali',
 						value: 'ne',
 					},
 					{
-						name: 'nl - Dutch',
-						value: 'nl',
-					},
-					{
-						name: 'nn - Norwegian (Nynorsk)',
-						value: 'nn',
-					},
-					{
-						name: 'no - Norwegian',
-						value: 'no',
+						name: 'pcm - Nigerian Pidgin',
+						value: 'pcm',
 					},
 					{
 						name: 'nso - Northern Sotho',
 						value: 'nso',
 					},
 					{
-						name: 'ny - Chichewa',
-						value: 'ny',
+						name: 'no - Norwegian',
+						value: 'no',
 					},
 					{
-						name: 'nyn - Runyakitara',
-						value: 'nyn',
+						name: 'nn - Norwegian (Nynorsk)',
+						value: 'nn',
 					},
 					{
 						name: 'oc - Occitan',
 						value: 'oc',
 					},
 					{
-						name: 'om - Oromo',
-						value: 'om',
-					},
-					{
 						name: 'or - Oriya',
 						value: 'or',
 					},
 					{
-						name: 'pa - Punjabi',
-						value: 'pa',
-					},
-					{
-						name: 'pcm - Nigerian Pidgin',
-						value: 'pcm',
-					},
-					{
-						name: 'pl - Polish',
-						value: 'pl',
+						name: 'om - Oromo',
+						value: 'om',
 					},
 					{
 						name: 'ps - Pashto',
 						value: 'ps',
+					},
+					{
+						name: 'fa - Persian',
+						value: 'fa',
+					},
+					{
+						name: 'xx-pirate - Pirate',
+						value: 'xx-pirate',
+					},
+					{
+						name: 'pl - Polish',
+						value: 'pl',
 					},
 					{
 						name: 'pt - Portuguese',
@@ -651,36 +730,60 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'pt-pt',
 					},
 					{
+						name: 'pa - Punjabi',
+						value: 'pa',
+					},
+					{
 						name: 'qu - Quechua',
 						value: 'qu',
-					},
-					{
-						name: 'rm - Romansh',
-						value: 'rm',
-					},
-					{
-						name: 'rn - Kirundi',
-						value: 'rn',
 					},
 					{
 						name: 'ro - Romanian',
 						value: 'ro',
 					},
 					{
+						name: 'rm - Romansh',
+						value: 'rm',
+					},
+					{
+						name: 'nyn - Runyakitara',
+						value: 'nyn',
+					},
+					{
 						name: 'ru - Russian',
 						value: 'ru',
 					},
 					{
-						name: 'rw - Kinyarwanda',
-						value: 'rw',
+						name: 'gd - Scots Gaelic',
+						value: 'gd',
 					},
 					{
-						name: 'sd - Sindhi',
-						value: 'sd',
+						name: 'sr - Serbian',
+						value: 'sr',
 					},
 					{
 						name: 'sh - Serbo-Croatian',
 						value: 'sh',
+					},
+					{
+						name: 'st - Sesotho',
+						value: 'st',
+					},
+					{
+						name: 'tn - Setswana',
+						value: 'tn',
+					},
+					{
+						name: 'crs - Seychellois Creole',
+						value: 'crs',
+					},
+					{
+						name: 'sn - Shona',
+						value: 'sn',
+					},
+					{
+						name: 'sd - Sindhi',
+						value: 'sd',
 					},
 					{
 						name: 'si - Sinhalese',
@@ -695,52 +798,44 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'sl',
 					},
 					{
-						name: 'sn - Shona',
-						value: 'sn',
-					},
-					{
 						name: 'so - Somali',
 						value: 'so',
 					},
 					{
-						name: 'sq - Albanian',
-						value: 'sq',
+						name: 'es - Spanish',
+						value: 'es',
 					},
 					{
-						name: 'sr - Serbian',
-						value: 'sr',
-					},
-					{
-						name: 'sr-me - Montenegrin',
-						value: 'sr-me',
-					},
-					{
-						name: 'st - Sesotho',
-						value: 'st',
+						name: 'es-419 - Spanish (Latin American)',
+						value: 'es-419',
 					},
 					{
 						name: 'su - Sundanese',
 						value: 'su',
 					},
 					{
+						name: 'sw - Swahili',
+						value: 'sw',
+					},
+					{
 						name: 'sv - Swedish',
 						value: 'sv',
 					},
 					{
-						name: 'sw - Swahili',
-						value: 'sw',
+						name: 'tg - Tajik',
+						value: 'tg',
 					},
 					{
 						name: 'ta - Tamil',
 						value: 'ta',
 					},
 					{
-						name: 'te - Telugu',
-						value: 'te',
+						name: 'tt - Tatar',
+						value: 'tt',
 					},
 					{
-						name: 'tg - Tajik',
-						value: 'tg',
+						name: 'te - Telugu',
+						value: 'te',
 					},
 					{
 						name: 'th - Thai',
@@ -751,32 +846,24 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'ti',
 					},
 					{
-						name: 'tk - Turkmen',
-						value: 'tk',
-					},
-					{
-						name: 'tl - Filipino',
-						value: 'tl',
-					},
-					{
-						name: 'tn - Setswana',
-						value: 'tn',
-					},
-					{
 						name: 'to - Tonga',
 						value: 'to',
+					},
+					{
+						name: 'lua - Tshiluba',
+						value: 'lua',
+					},
+					{
+						name: 'tum - Tumbuka',
+						value: 'tum',
 					},
 					{
 						name: 'tr - Turkish',
 						value: 'tr',
 					},
 					{
-						name: 'tt - Tatar',
-						value: 'tt',
-					},
-					{
-						name: 'tum - Tumbuka',
-						value: 'tum',
+						name: 'tk - Turkmen',
+						value: 'tk',
 					},
 					{
 						name: 'tw - Twi',
@@ -799,44 +886,24 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'uz',
 					},
 					{
+						name: 'vu - Vanuatu',
+						value: 'vu',
+					},
+					{
 						name: 'vi - Vietnamese',
 						value: 'vi',
 					},
 					{
-						name: 'vu - Vanuatu',
-						value: 'vu',
+						name: 'cy - Welsh',
+						value: 'cy',
 					},
 					{
 						name: 'wo - Wolof',
 						value: 'wo',
 					},
 					{
-						name: 'ws - Samoa',
-						value: 'ws',
-					},
-					{
 						name: 'xh - Xhosa',
 						value: 'xh',
-					},
-					{
-						name: 'xx-bork - Bork, bork, bork!',
-						value: 'xx-bork',
-					},
-					{
-						name: 'xx-elmer - Elmer Fudd',
-						value: 'xx-elmer',
-					},
-					{
-						name: 'xx-hacker - Hacker',
-						value: 'xx-hacker',
-					},
-					{
-						name: 'xx-klingon - Klingon',
-						value: 'xx-klingon',
-					},
-					{
-						name: 'xx-pirate - Pirate',
-						value: 'xx-pirate',
 					},
 					{
 						name: 'yi - Yiddish',
@@ -845,18 +912,6 @@ export const googleMapsFields: INodeProperties[] = [
 					{
 						name: 'yo - Yoruba',
 						value: 'yo',
-					},
-					{
-						name: 'zh-cn - Chinese (Simplified)',
-						value: 'zh-cn',
-					},
-					{
-						name: 'zh-hk - Hong Kong (Traditional)',
-						value: 'zh-hk',
-					},
-					{
-						name: 'zh-tw - Chinese (Traditional)',
-						value: 'zh-tw',
 					},
 					{
 						name: 'zu - Zulu',
@@ -884,100 +939,92 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'ac',
 					},
 					{
-						name: 'ad - Andorra',
-						value: 'ad',
-					},
-					{
-						name: 'ae - United Arab Emirates',
-						value: 'ae',
-					},
-					{
 						name: 'af - Afghanistan',
 						value: 'af',
-					},
-					{
-						name: 'ag - Antigua and Barbuda',
-						value: 'ag',
-					},
-					{
-						name: 'ai - Anguilla',
-						value: 'ai',
 					},
 					{
 						name: 'al - Albania',
 						value: 'al',
 					},
 					{
-						name: 'am - Armenia',
-						value: 'am',
-					},
-					{
-						name: 'an - Netherlands Antilles',
-						value: 'an',
-					},
-					{
-						name: 'ao - Angola',
-						value: 'ao',
-					},
-					{
-						name: 'aq - Antarctica',
-						value: 'aq',
-					},
-					{
-						name: 'ar - Argentina',
-						value: 'ar',
+						name: 'dz - Algeria',
+						value: 'dz',
 					},
 					{
 						name: 'as - American Samoa',
 						value: 'as',
 					},
 					{
-						name: 'at - Austria',
-						value: 'at',
+						name: 'ad - Andorra',
+						value: 'ad',
 					},
 					{
-						name: 'au - Australia',
-						value: 'au',
+						name: 'ao - Angola',
+						value: 'ao',
+					},
+					{
+						name: 'ai - Anguilla',
+						value: 'ai',
+					},
+					{
+						name: 'aq - Antarctica',
+						value: 'aq',
+					},
+					{
+						name: 'ag - Antigua and Barbuda',
+						value: 'ag',
+					},
+					{
+						name: 'ar - Argentina',
+						value: 'ar',
+					},
+					{
+						name: 'am - Armenia',
+						value: 'am',
 					},
 					{
 						name: 'aw - Aruba',
 						value: 'aw',
 					},
 					{
+						name: 'au - Australia',
+						value: 'au',
+					},
+					{
+						name: 'at - Austria',
+						value: 'at',
+					},
+					{
 						name: 'az - Azerbaijan',
 						value: 'az',
 					},
 					{
-						name: 'ba - Bosnia and Herzegovina',
-						value: 'ba',
-					},
-					{
-						name: 'bb - Barbados',
-						value: 'bb',
-					},
-					{
-						name: 'bd - Bangladesh',
-						value: 'bd',
-					},
-					{
-						name: 'be - Belgium',
-						value: 'be',
-					},
-					{
-						name: 'bf - Burkina Faso',
-						value: 'bf',
-					},
-					{
-						name: 'bg - Bulgaria',
-						value: 'bg',
+						name: 'bs - Bahamas',
+						value: 'bs',
 					},
 					{
 						name: 'bh - Bahrain',
 						value: 'bh',
 					},
 					{
-						name: 'bi - Burundi',
-						value: 'bi',
+						name: 'bd - Bangladesh',
+						value: 'bd',
+					},
+					{
+						name: 'bb - Barbados',
+						value: 'bb',
+					},
+					{
+						name: 'by - Belarus',
+						value: 'by',
+					},
+					{
+						name: 'be - Belgium',
+						value: 'be',
+					},
+					{
+						name: 'bz - Belize',
+						value: 'bz',
 					},
 					{
 						name: 'bj - Benin',
@@ -988,104 +1035,128 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'bm',
 					},
 					{
-						name: 'bn - Brunei Darussalam',
-						value: 'bn',
+						name: 'bt - Bhutan',
+						value: 'bt',
 					},
 					{
 						name: 'bo - Bolivia',
 						value: 'bo',
 					},
 					{
-						name: 'br - Brazil',
-						value: 'br',
-					},
-					{
-						name: 'bs - Bahamas',
-						value: 'bs',
-					},
-					{
-						name: 'bt - Bhutan',
-						value: 'bt',
-					},
-					{
-						name: 'bv - Bouvet Island',
-						value: 'bv',
+						name: 'ba - Bosnia and Herzegovina',
+						value: 'ba',
 					},
 					{
 						name: 'bw - Botswana',
 						value: 'bw',
 					},
 					{
-						name: 'by - Belarus',
-						value: 'by',
+						name: 'bv - Bouvet Island',
+						value: 'bv',
 					},
 					{
-						name: 'bz - Belize',
-						value: 'bz',
+						name: 'br - Brazil',
+						value: 'br',
 					},
 					{
-						name: 'ca - Canada',
-						value: 'ca',
+						name: 'io - British Indian Ocean Territory',
+						value: 'io',
 					},
 					{
-						name: 'cc - Cocos (Keeling) Islands',
-						value: 'cc',
+						name: 'bn - Brunei Darussalam',
+						value: 'bn',
 					},
 					{
-						name: 'cd - Congo, the Democratic Republic of the',
-						value: 'cd',
+						name: 'bg - Bulgaria',
+						value: 'bg',
 					},
 					{
-						name: 'cf - Central African Republic',
-						value: 'cf',
+						name: 'bf - Burkina Faso',
+						value: 'bf',
 					},
 					{
-						name: 'cg - Congo',
-						value: 'cg',
+						name: 'bi - Burundi',
+						value: 'bi',
 					},
 					{
-						name: 'ch - Switzerland',
-						value: 'ch',
-					},
-					{
-						name: 'ci - Cote D\'ivoire',
-						value: 'ci',
-					},
-					{
-						name: 'ck - Cook Islands',
-						value: 'ck',
-					},
-					{
-						name: 'cl - Chile',
-						value: 'cl',
+						name: 'kh - Cambodia',
+						value: 'kh',
 					},
 					{
 						name: 'cm - Cameroon',
 						value: 'cm',
 					},
 					{
-						name: 'cn - China',
-						value: 'cn',
-					},
-					{
-						name: 'co - Colombia',
-						value: 'co',
-					},
-					{
-						name: 'cr - Costa Rica',
-						value: 'cr',
-					},
-					{
-						name: 'cu - Cuba',
-						value: 'cu',
+						name: 'ca - Canada',
+						value: 'ca',
 					},
 					{
 						name: 'cv - Cape Verde',
 						value: 'cv',
 					},
 					{
+						name: 'ky - Cayman Islands',
+						value: 'ky',
+					},
+					{
+						name: 'cf - Central African Republic',
+						value: 'cf',
+					},
+					{
+						name: 'td - Chad',
+						value: 'td',
+					},
+					{
+						name: 'cl - Chile',
+						value: 'cl',
+					},
+					{
+						name: 'cn - China',
+						value: 'cn',
+					},
+					{
 						name: 'cx - Christmas Island',
 						value: 'cx',
+					},
+					{
+						name: 'cc - Cocos (Keeling) Islands',
+						value: 'cc',
+					},
+					{
+						name: 'co - Colombia',
+						value: 'co',
+					},
+					{
+						name: 'km - Comoros',
+						value: 'km',
+					},
+					{
+						name: 'cg - Congo',
+						value: 'cg',
+					},
+					{
+						name: 'cd - Congo, the Democratic Republic of the',
+						value: 'cd',
+					},
+					{
+						name: 'ck - Cook Islands',
+						value: 'ck',
+					},
+					{
+						name: 'cr - Costa Rica',
+						value: 'cr',
+					},
+					{
+						name: 'ci - Cote D\'ivoire',
+						value: 'ci',
+					},
+					{
+						name: 'hr - Croatia',
+						value: 'hr',
+					},
+					{
+						name: 'cu - Cuba',
+						value: 'cu',
 					},
 					{
 						name: 'cy - Cyprus',
@@ -1096,16 +1167,12 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'cz',
 					},
 					{
-						name: 'de - Germany',
-						value: 'de',
+						name: 'dk - Denmark',
+						value: 'dk',
 					},
 					{
 						name: 'dj - Djibouti',
 						value: 'dj',
-					},
-					{
-						name: 'dk - Denmark',
-						value: 'dk',
 					},
 					{
 						name: 'dm - Dominica',
@@ -1116,84 +1183,84 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'do',
 					},
 					{
-						name: 'dz - Algeria',
-						value: 'dz',
-					},
-					{
 						name: 'ec - Ecuador',
 						value: 'ec',
-					},
-					{
-						name: 'ee - Estonia',
-						value: 'ee',
 					},
 					{
 						name: 'eg - Egypt',
 						value: 'eg',
 					},
 					{
-						name: 'eh - Western Sahara',
-						value: 'eh',
+						name: 'sv - El Salvador',
+						value: 'sv',
+					},
+					{
+						name: 'gq - Equatorial Guinea',
+						value: 'gq',
 					},
 					{
 						name: 'er - Eritrea',
 						value: 'er',
 					},
 					{
-						name: 'es - Spain',
-						value: 'es',
+						name: 'ee - Estonia',
+						value: 'ee',
 					},
 					{
 						name: 'et - Ethiopia',
 						value: 'et',
 					},
 					{
-						name: 'fi - Finland',
-						value: 'fi',
-					},
-					{
-						name: 'fj - Fiji',
-						value: 'fj',
-					},
-					{
 						name: 'fk - Falkland Islands (Malvinas)',
 						value: 'fk',
-					},
-					{
-						name: 'fm - Micronesia, Federated States of',
-						value: 'fm',
 					},
 					{
 						name: 'fo - Faroe Islands',
 						value: 'fo',
 					},
 					{
+						name: 'fj - Fiji',
+						value: 'fj',
+					},
+					{
+						name: 'fi - Finland',
+						value: 'fi',
+					},
+					{
 						name: 'fr - France',
 						value: 'fr',
-					},
-					{
-						name: 'ga - Gabon',
-						value: 'ga',
-					},
-					{
-						name: 'gb - United Kingdom',
-						value: 'gb',
-					},
-					{
-						name: 'gd - Grenada',
-						value: 'gd',
-					},
-					{
-						name: 'ge - Georgia',
-						value: 'ge',
 					},
 					{
 						name: 'gf - French Guiana',
 						value: 'gf',
 					},
 					{
+						name: 'pf - French Polynesia',
+						value: 'pf',
+					},
+					{
+						name: 'tf - French Southern Territories',
+						value: 'tf',
+					},
+					{
+						name: 'ga - Gabon',
+						value: 'ga',
+					},
+					{
+						name: 'gm - Gambia',
+						value: 'gm',
+					},
+					{
+						name: 'ge - Georgia',
+						value: 'ge',
+					},
+					{
 						name: 'gg - Guernsey',
 						value: 'gg',
+					},
+					{
+						name: 'de - Germany',
+						value: 'de',
 					},
 					{
 						name: 'gh - Ghana',
@@ -1204,40 +1271,32 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'gi',
 					},
 					{
+						name: 'gr - Greece',
+						value: 'gr',
+					},
+					{
 						name: 'gl - Greenland',
 						value: 'gl',
 					},
 					{
-						name: 'gm - Gambia',
-						value: 'gm',
-					},
-					{
-						name: 'gn - Guinea',
-						value: 'gn',
+						name: 'gd - Grenada',
+						value: 'gd',
 					},
 					{
 						name: 'gp - Guadeloupe',
 						value: 'gp',
 					},
 					{
-						name: 'gq - Equatorial Guinea',
-						value: 'gq',
-					},
-					{
-						name: 'gr - Greece',
-						value: 'gr',
-					},
-					{
-						name: 'gs - South Georgia and the South Sandwich Islands',
-						value: 'gs',
+						name: 'gu - Guam',
+						value: 'gu',
 					},
 					{
 						name: 'gt - Guatemala',
 						value: 'gt',
 					},
 					{
-						name: 'gu - Guam',
-						value: 'gu',
+						name: 'gn - Guinea',
+						value: 'gn',
 					},
 					{
 						name: 'gw - Guinea-Bissau',
@@ -1248,32 +1307,52 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'gy',
 					},
 					{
-						name: 'hk - Hong Kong',
-						value: 'hk',
+						name: 'ht - Haiti',
+						value: 'ht',
 					},
 					{
 						name: 'hm - Heard Island and Mcdonald Islands',
 						value: 'hm',
 					},
 					{
+						name: 'va - Holy See (Vatican City State)',
+						value: 'va',
+					},
+					{
 						name: 'hn - Honduras',
 						value: 'hn',
 					},
 					{
-						name: 'hr - Croatia',
-						value: 'hr',
-					},
-					{
-						name: 'ht - Haiti',
-						value: 'ht',
+						name: 'hk - Hong Kong',
+						value: 'hk',
 					},
 					{
 						name: 'hu - Hungary',
 						value: 'hu',
 					},
 					{
+						name: 'im - Isle of Man',
+						value: 'im',
+					},
+					{
+						name: 'is - Iceland',
+						value: 'is',
+					},
+					{
+						name: 'in - India',
+						value: 'in',
+					},
+					{
 						name: 'id - Indonesia',
 						value: 'id',
+					},
+					{
+						name: 'ir - Iran, Islamic Republic of',
+						value: 'ir',
+					},
+					{
+						name: 'iq - Iraq',
+						value: 'iq',
 					},
 					{
 						name: 'ie - Ireland',
@@ -1282,30 +1361,6 @@ export const googleMapsFields: INodeProperties[] = [
 					{
 						name: 'il - Israel',
 						value: 'il',
-					},
-					{
-						name: 'im - Isle of Man',
-						value: 'im',
-					},
-					{
-						name: 'in - India',
-						value: 'in',
-					},
-					{
-						name: 'io - British Indian Ocean Territory',
-						value: 'io',
-					},
-					{
-						name: 'iq - Iraq',
-						value: 'iq',
-					},
-					{
-						name: 'ir - Iran, Islamic Republic of',
-						value: 'ir',
-					},
-					{
-						name: 'is - Iceland',
-						value: 'is',
 					},
 					{
 						name: 'it - Italy',
@@ -1320,36 +1375,24 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'jm',
 					},
 					{
+						name: 'jp - Japan',
+						value: 'jp',
+					},
+					{
 						name: 'jo - Jordan',
 						value: 'jo',
 					},
 					{
-						name: 'jp - Japan',
-						value: 'jp',
+						name: 'kz - Kazakhstan',
+						value: 'kz',
 					},
 					{
 						name: 'ke - Kenya',
 						value: 'ke',
 					},
 					{
-						name: 'kg - Kyrgyzstan',
-						value: 'kg',
-					},
-					{
-						name: 'kh - Cambodia',
-						value: 'kh',
-					},
-					{
 						name: 'ki - Kiribati',
 						value: 'ki',
-					},
-					{
-						name: 'km - Comoros',
-						value: 'km',
-					},
-					{
-						name: 'kn - Saint Kitts and Nevis',
-						value: 'kn',
 					},
 					{
 						name: 'kp - Korea, Democratic People\'s Republic of',
@@ -1364,40 +1407,36 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'kw',
 					},
 					{
-						name: 'ky - Cayman Islands',
-						value: 'ky',
-					},
-					{
-						name: 'kz - Kazakhstan',
-						value: 'kz',
+						name: 'kg - Kyrgyzstan',
+						value: 'kg',
 					},
 					{
 						name: 'la - Lao People\'s Democratic Republic',
 						value: 'la',
 					},
 					{
+						name: 'lv - Latvia',
+						value: 'lv',
+					},
+					{
 						name: 'lb - Lebanon',
 						value: 'lb',
 					},
 					{
-						name: 'lc - Saint Lucia',
-						value: 'lc',
-					},
-					{
-						name: 'li - Liechtenstein',
-						value: 'li',
-					},
-					{
-						name: 'lk - Sri Lanka',
-						value: 'lk',
+						name: 'ls - Lesotho',
+						value: 'ls',
 					},
 					{
 						name: 'lr - Liberia',
 						value: 'lr',
 					},
 					{
-						name: 'ls - Lesotho',
-						value: 'ls',
+						name: 'ly - Libyan Arab Jamahiriya',
+						value: 'ly',
+					},
+					{
+						name: 'li - Liechtenstein',
+						value: 'li',
 					},
 					{
 						name: 'lt - Lithuania',
@@ -1408,60 +1447,44 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'lu',
 					},
 					{
-						name: 'lv - Latvia',
-						value: 'lv',
-					},
-					{
-						name: 'ly - Libyan Arab Jamahiriya',
-						value: 'ly',
-					},
-					{
-						name: 'ma - Morocco',
-						value: 'ma',
-					},
-					{
-						name: 'mc - Monaco',
-						value: 'mc',
-					},
-					{
-						name: 'md - Moldova, Republic of',
-						value: 'md',
-					},
-					{
 						name: 'me - Montenegro',
 						value: 'me',
-					},
-					{
-						name: 'mg - Madagascar',
-						value: 'mg',
-					},
-					{
-						name: 'mh - Marshall Islands',
-						value: 'mh',
-					},
-					{
-						name: 'mk - Macedonia, the Former Yugoslav Republic of',
-						value: 'mk',
-					},
-					{
-						name: 'ml - Mali',
-						value: 'ml',
-					},
-					{
-						name: 'mm - Myanmar',
-						value: 'mm',
-					},
-					{
-						name: 'mn - Mongolia',
-						value: 'mn',
 					},
 					{
 						name: 'mo - Macao',
 						value: 'mo',
 					},
 					{
-						name: 'mp - Northern Mariana Islands',
-						value: 'mp',
+						name: 'mk - Macedonia, the Former Yugoslav Republic of',
+						value: 'mk',
+					},
+					{
+						name: 'mg - Madagascar',
+						value: 'mg',
+					},
+					{
+						name: 'mw - Malawi',
+						value: 'mw',
+					},
+					{
+						name: 'my - Malaysia',
+						value: 'my',
+					},
+					{
+						name: 'mv - Maldives',
+						value: 'mv',
+					},
+					{
+						name: 'ml - Mali',
+						value: 'ml',
+					},
+					{
+						name: 'mt - Malta',
+						value: 'mt',
+					},
+					{
+						name: 'mh - Marshall Islands',
+						value: 'mh',
 					},
 					{
 						name: 'mq - Martinique',
@@ -1472,144 +1495,156 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'mr',
 					},
 					{
-						name: 'ms - Montserrat',
-						value: 'ms',
-					},
-					{
-						name: 'mt - Malta',
-						value: 'mt',
-					},
-					{
 						name: 'mu - Mauritius',
 						value: 'mu',
 					},
 					{
-						name: 'mv - Maldives',
-						value: 'mv',
-					},
-					{
-						name: 'mw - Malawi',
-						value: 'mw',
+						name: 'yt - Mayotte',
+						value: 'yt',
 					},
 					{
 						name: 'mx - Mexico',
 						value: 'mx',
 					},
 					{
-						name: 'my - Malaysia',
-						value: 'my',
+						name: 'fm - Micronesia, Federated States of',
+						value: 'fm',
+					},
+					{
+						name: 'md - Moldova, Republic of',
+						value: 'md',
+					},
+					{
+						name: 'mc - Monaco',
+						value: 'mc',
+					},
+					{
+						name: 'mn - Mongolia',
+						value: 'mn',
+					},
+					{
+						name: 'ms - Montserrat',
+						value: 'ms',
+					},
+					{
+						name: 'ma - Morocco',
+						value: 'ma',
 					},
 					{
 						name: 'mz - Mozambique',
 						value: 'mz',
 					},
 					{
+						name: 'mm - Myanmar',
+						value: 'mm',
+					},
+					{
 						name: 'na - Namibia',
 						value: 'na',
-					},
-					{
-						name: 'nc - New Caledonia',
-						value: 'nc',
-					},
-					{
-						name: 'ne - Niger',
-						value: 'ne',
-					},
-					{
-						name: 'nf - Norfolk Island',
-						value: 'nf',
-					},
-					{
-						name: 'ng - Nigeria',
-						value: 'ng',
-					},
-					{
-						name: 'ni - Nicaragua',
-						value: 'ni',
-					},
-					{
-						name: 'nl - Netherlands',
-						value: 'nl',
-					},
-					{
-						name: 'no - Norway',
-						value: 'no',
-					},
-					{
-						name: 'np - Nepal',
-						value: 'np',
 					},
 					{
 						name: 'nr - Nauru',
 						value: 'nr',
 					},
 					{
-						name: 'nu - Niue',
-						value: 'nu',
+						name: 'np - Nepal',
+						value: 'np',
+					},
+					{
+						name: 'nl - Netherlands',
+						value: 'nl',
+					},
+					{
+						name: 'an - Netherlands Antilles',
+						value: 'an',
+					},
+					{
+						name: 'nc - New Caledonia',
+						value: 'nc',
 					},
 					{
 						name: 'nz - New Zealand',
 						value: 'nz',
 					},
 					{
+						name: 'ni - Nicaragua',
+						value: 'ni',
+					},
+					{
+						name: 'ne - Niger',
+						value: 'ne',
+					},
+					{
+						name: 'ng - Nigeria',
+						value: 'ng',
+					},
+					{
+						name: 'nu - Niue',
+						value: 'nu',
+					},
+					{
+						name: 'nf - Norfolk Island',
+						value: 'nf',
+					},
+					{
+						name: 'mp - Northern Mariana Islands',
+						value: 'mp',
+					},
+					{
+						name: 'no - Norway',
+						value: 'no',
+					},
+					{
 						name: 'om - Oman',
 						value: 'om',
-					},
-					{
-						name: 'pa - Panama',
-						value: 'pa',
-					},
-					{
-						name: 'pe - Peru',
-						value: 'pe',
-					},
-					{
-						name: 'pf - French Polynesia',
-						value: 'pf',
-					},
-					{
-						name: 'pg - Papua New Guinea',
-						value: 'pg',
-					},
-					{
-						name: 'ph - Philippines',
-						value: 'ph',
 					},
 					{
 						name: 'pk - Pakistan',
 						value: 'pk',
 					},
 					{
-						name: 'pl - Poland',
-						value: 'pl',
-					},
-					{
-						name: 'pm - Saint Pierre and Miquelon',
-						value: 'pm',
-					},
-					{
-						name: 'pn - Pitcairn',
-						value: 'pn',
-					},
-					{
-						name: 'pr - Puerto Rico',
-						value: 'pr',
+						name: 'pw - Palau',
+						value: 'pw',
 					},
 					{
 						name: 'ps - Palestinian Territory, Occupied',
 						value: 'ps',
 					},
 					{
-						name: 'pt - Portugal',
-						value: 'pt',
+						name: 'pa - Panama',
+						value: 'pa',
 					},
 					{
-						name: 'pw - Palau',
-						value: 'pw',
+						name: 'pg - Papua New Guinea',
+						value: 'pg',
 					},
 					{
 						name: 'py - Paraguay',
 						value: 'py',
+					},
+					{
+						name: 'pe - Peru',
+						value: 'pe',
+					},
+					{
+						name: 'ph - Philippines',
+						value: 'ph',
+					},
+					{
+						name: 'pn - Pitcairn',
+						value: 'pn',
+					},
+					{
+						name: 'pl - Poland',
+						value: 'pl',
+					},
+					{
+						name: 'pt - Portugal',
+						value: 'pt',
+					},
+					{
+						name: 'pr - Puerto Rico',
+						value: 'pr',
 					},
 					{
 						name: 'qa - Qatar',
@@ -1624,10 +1659,6 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'ro',
 					},
 					{
-						name: 'rs - Serbia and Montenegro',
-						value: 'rs',
-					},
-					{
 						name: 'ru - Russian Federation',
 						value: 'ru',
 					},
@@ -1636,164 +1667,204 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'rw',
 					},
 					{
-						name: 'sa - Saudi Arabia',
-						value: 'sa',
-					},
-					{
-						name: 'sb - Solomon Islands',
-						value: 'sb',
-					},
-					{
-						name: 'sc - Seychelles',
-						value: 'sc',
-					},
-					{
-						name: 'sd - Sudan',
-						value: 'sd',
-					},
-					{
-						name: 'se - Sweden',
-						value: 'se',
-					},
-					{
-						name: 'sg - Singapore',
-						value: 'sg',
-					},
-					{
 						name: 'sh - Saint Helena',
 						value: 'sh',
 					},
 					{
-						name: 'si - Slovenia',
-						value: 'si',
+						name: 'kn - Saint Kitts and Nevis',
+						value: 'kn',
 					},
 					{
-						name: 'sj - Svalbard and Jan Mayen',
-						value: 'sj',
+						name: 'lc - Saint Lucia',
+						value: 'lc',
 					},
 					{
-						name: 'sk - Slovakia',
-						value: 'sk',
+						name: 'pm - Saint Pierre and Miquelon',
+						value: 'pm',
 					},
 					{
-						name: 'sl - Sierra Leone',
-						value: 'sl',
+						name: 'vc - Saint Vincent and the Grenadines',
+						value: 'vc',
+					},
+					{
+						name: 'ws - Samoa',
+						value: 'ws',
 					},
 					{
 						name: 'sm - San Marino',
 						value: 'sm',
 					},
 					{
+						name: 'st - Sao Tome and Principe',
+						value: 'st',
+					},
+					{
+						name: 'sa - Saudi Arabia',
+						value: 'sa',
+					},
+					{
 						name: 'sn - Senegal',
 						value: 'sn',
+					},
+					{
+						name: 'rs - Serbia and Montenegro',
+						value: 'rs',
+					},
+					{
+						name: 'sc - Seychelles',
+						value: 'sc',
+					},
+					{
+						name: 'sl - Sierra Leone',
+						value: 'sl',
+					},
+					{
+						name: 'sg - Singapore',
+						value: 'sg',
+					},
+					{
+						name: 'sk - Slovakia',
+						value: 'sk',
+					},
+					{
+						name: 'si - Slovenia',
+						value: 'si',
+					},
+					{
+						name: 'sb - Solomon Islands',
+						value: 'sb',
 					},
 					{
 						name: 'so - Somalia',
 						value: 'so',
 					},
 					{
+						name: 'za - South Africa',
+						value: 'za',
+					},
+					{
+						name: 'gs - South Georgia and the South Sandwich Islands',
+						value: 'gs',
+					},
+					{
+						name: 'es - Spain',
+						value: 'es',
+					},
+					{
+						name: 'lk - Sri Lanka',
+						value: 'lk',
+					},
+					{
+						name: 'sd - Sudan',
+						value: 'sd',
+					},
+					{
 						name: 'sr - Suriname',
 						value: 'sr',
 					},
 					{
-						name: 'st - Sao Tome and Principe',
-						value: 'st',
-					},
-					{
-						name: 'sv - El Salvador',
-						value: 'sv',
-					},
-					{
-						name: 'sy - Syrian Arab Republic',
-						value: 'sy',
+						name: 'sj - Svalbard and Jan Mayen',
+						value: 'sj',
 					},
 					{
 						name: 'sz - Swaziland',
 						value: 'sz',
 					},
 					{
-						name: 'tc - Turks and Caicos Islands',
-						value: 'tc',
+						name: 'se - Sweden',
+						value: 'se',
 					},
 					{
-						name: 'td - Chad',
-						value: 'td',
+						name: 'ch - Switzerland',
+						value: 'ch',
 					},
 					{
-						name: 'tf - French Southern Territories',
-						value: 'tf',
-					},
-					{
-						name: 'tg - Togo',
-						value: 'tg',
-					},
-					{
-						name: 'th - Thailand',
-						value: 'th',
-					},
-					{
-						name: 'tj - Tajikistan',
-						value: 'tj',
-					},
-					{
-						name: 'tk - Tokelau',
-						value: 'tk',
-					},
-					{
-						name: 'tl - Timor-Leste',
-						value: 'tl',
-					},
-					{
-						name: 'tm - Turkmenistan',
-						value: 'tm',
-					},
-					{
-						name: 'tn - Tunisia',
-						value: 'tn',
-					},
-					{
-						name: 'to - Tonga',
-						value: 'to',
-					},
-					{
-						name: 'tr - Turkey',
-						value: 'tr',
-					},
-					{
-						name: 'tt - Trinidad and Tobago',
-						value: 'tt',
-					},
-					{
-						name: 'tv - Tuvalu',
-						value: 'tv',
+						name: 'sy - Syrian Arab Republic',
+						value: 'sy',
 					},
 					{
 						name: 'tw - Taiwan, Province of China',
 						value: 'tw',
 					},
 					{
+						name: 'tj - Tajikistan',
+						value: 'tj',
+					},
+					{
 						name: 'tz - Tanzania, United Republic of',
 						value: 'tz',
 					},
 					{
-						name: 'ua - Ukraine',
-						value: 'ua',
+						name: 'th - Thailand',
+						value: 'th',
+					},
+					{
+						name: 'tl - Timor-Leste',
+						value: 'tl',
+					},
+					{
+						name: 'tg - Togo',
+						value: 'tg',
+					},
+					{
+						name: 'tk - Tokelau',
+						value: 'tk',
+					},
+					{
+						name: 'to - Tonga',
+						value: 'to',
+					},
+					{
+						name: 'tt - Trinidad and Tobago',
+						value: 'tt',
+					},
+					{
+						name: 'tn - Tunisia',
+						value: 'tn',
+					},
+					{
+						name: 'tr - Turkey',
+						value: 'tr',
+					},
+					{
+						name: 'tm - Turkmenistan',
+						value: 'tm',
+					},
+					{
+						name: 'tc - Turks and Caicos Islands',
+						value: 'tc',
+					},
+					{
+						name: 'tv - Tuvalu',
+						value: 'tv',
 					},
 					{
 						name: 'ug - Uganda',
 						value: 'ug',
 					},
 					{
+						name: 'ua - Ukraine',
+						value: 'ua',
+					},
+					{
+						name: 'ae - United Arab Emirates',
+						value: 'ae',
+					},
+					{
 						name: 'uk - United Kingdom',
 						value: 'uk',
 					},
 					{
-						name: 'um - United States Minor Outlying Islands',
-						value: 'um',
+						name: 'gb - United Kingdom',
+						value: 'gb',
 					},
 					{
 						name: 'us - United States',
 						value: 'us',
+					},
+					{
+						name: 'um - United States Minor Outlying Islands',
+						value: 'um',
 					},
 					{
 						name: 'uy - Uruguay',
@@ -1804,16 +1875,16 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'uz',
 					},
 					{
-						name: 'va - Holy See (Vatican City State)',
-						value: 'va',
-					},
-					{
-						name: 'vc - Saint Vincent and the Grenadines',
-						value: 'vc',
+						name: 'vu - Vanuatu',
+						value: 'vu',
 					},
 					{
 						name: 've - Venezuela',
 						value: 've',
+					},
+					{
+						name: 'vn - Viet Nam',
+						value: 'vn',
 					},
 					{
 						name: 'vg - Virgin Islands, British',
@@ -1824,32 +1895,16 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'vi',
 					},
 					{
-						name: 'vn - Viet Nam',
-						value: 'vn',
-					},
-					{
-						name: 'vu - Vanuatu',
-						value: 'vu',
-					},
-					{
 						name: 'wf - Wallis and Futuna',
 						value: 'wf',
 					},
 					{
-						name: 'ws - Samoa',
-						value: 'ws',
+						name: 'eh - Western Sahara',
+						value: 'eh',
 					},
 					{
 						name: 'ye - Yemen',
 						value: 'ye',
-					},
-					{
-						name: 'yt - Mayotte',
-						value: 'yt',
-					},
-					{
-						name: 'za - South Africa',
-						value: 'za',
 					},
 					{
 						name: 'zm - Zambia',
@@ -1949,10 +2004,6 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'google.ca',
 					},
 					{
-						name: 'google.cat',
-						value: 'google.cat',
-					},
-					{
 						name: 'google.cd',
 						value: 'google.cd',
 					},
@@ -1979,10 +2030,6 @@ export const googleMapsFields: INodeProperties[] = [
 					{
 						name: 'google.cm',
 						value: 'google.cm',
-					},
-					{
-						name: 'google.cn',
-						value: 'google.cn',
 					},
 					{
 						name: 'google.co.ao',
@@ -2217,12 +2264,16 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'google.com.na',
 					},
 					{
-						name: 'google.com.nf',
-						value: 'google.com.nf',
-					},
-					{
 						name: 'google.com.ng',
 						value: 'google.com.ng',
+					},
+					{
+						name: 'google.ng',
+						value: 'google.ng',
+					},
+					{
+						name: 'google.com.nf',
+						value: 'google.com.nf',
 					},
 					{
 						name: 'google.com.ni',
@@ -2315,6 +2366,14 @@ export const googleMapsFields: INodeProperties[] = [
 					{
 						name: 'google.com.vn',
 						value: 'google.com.vn',
+					},
+					{
+						name: 'google.cat',
+						value: 'google.cat',
+					},
+					{
+						name: 'google.cn',
+						value: 'google.cn',
 					},
 					{
 						name: 'google.cv',
@@ -2521,10 +2580,6 @@ export const googleMapsFields: INodeProperties[] = [
 						value: 'google.ne',
 					},
 					{
-						name: 'google.ng',
-						value: 'google.ng',
-					},
-					{
 						name: 'google.nl',
 						value: 'google.nl',
 					},
@@ -2687,12 +2742,12 @@ export const googleMapsFields: INodeProperties[] = [
 				},
 				options: [
 					{
-						name: 'newestFirst',
-						value: 'newestFirst',
-					},
-					{
 						name: 'qualityScore',
 						value: 'qualityScore',
+					},
+					{
+						name: 'newestFirst',
+						value: 'newestFirst',
 					},
 					{
 						name: 'ratingHigh',

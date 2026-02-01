@@ -133,16 +133,16 @@ export const yellowpagesFields: INodeProperties[] = [
 				},
 				options: [
 					{
-						name: 'averageRating',
-						value: 'averageRating',
-					},
-					{
 						name: 'default',
 						value: 'default',
 					},
 					{
 						name: 'distance',
 						value: 'distance',
+					},
+					{
+						name: 'averageRating',
+						value: 'averageRating',
 					},
 					{
 						name: 'name',
@@ -179,12 +179,12 @@ export const yellowpagesFields: INodeProperties[] = [
 				},
 				options: [
 					{
-						name: 'www.yellowpages.ca',
-						value: 'www.yellowpages.ca',
-					},
-					{
 						name: 'www.yellowpages.com',
 						value: 'www.yellowpages.com',
+					},
+					{
+						name: 'www.yellowpages.ca',
+						value: 'www.yellowpages.ca',
 					},
 				],
 			},

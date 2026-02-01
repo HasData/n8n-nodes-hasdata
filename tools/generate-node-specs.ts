@@ -244,7 +244,7 @@ function processResource(resourceName: string, resourcePath: string) {
                         param = paramOrRef;
                     }
 
-                    const key = param.name;
+                    const key = `${param.name}|${param.description || ''}|${param['x-title'] || ''}`;
                     if (!fieldMap.has(key)) {
                         fieldMap.set(key, { param, ops: [] });
                     }
@@ -279,10 +279,11 @@ function processResource(resourceName: string, resourcePath: string) {
                         'x-values-mapping': propSchema['x-values-mapping'] || actualSchema['x-values-mapping']
                     };
 
-                    if (!fieldMap.has(propName)) {
-                        fieldMap.set(propName, { param, ops: [] });
+                    const key = `${propName}|${param.description || ''}|${param['x-title'] || ''}`;
+                    if (!fieldMap.has(key)) {
+                        fieldMap.set(key, { param, ops: [] });
                     }
-                    fieldMap.get(propName)!.ops.push(opValue);
+                    fieldMap.get(key)!.ops.push(opValue);
                 });
             }
         } catch (e) { }
@@ -339,8 +340,8 @@ function processResource(resourceName: string, resourcePath: string) {
     const sanitizeName = (name: string) => name.replace(/\[/g, '__opt__').replace(/\]/g, '__clt__');
 
     // 1. Collect fields (required and optional)
-    for (const [name, { param, ops }] of sortedFields) {
-        const n8nName = sanitizeName(name);
+    for (const [, { param, ops }] of sortedFields) {
+        const n8nName = sanitizeName(param.name);
 
         // Determine type, default value, and options
         let type = mapType(param.schema?.type || 'string');
@@ -365,7 +366,7 @@ function processResource(resourceName: string, resourcePath: string) {
 
         if (param.required) {
             requiredFields.push({
-                displayName: param['x-title'] || name,
+                displayName: param['x-title'] || param.name,
                 name: n8nName,
                 type,
                 default: defaultValue,
@@ -381,7 +382,7 @@ function processResource(resourceName: string, resourcePath: string) {
         } else {
             // Optional field for the collection
             optionalFields.push({
-                displayName: param['x-title'] || name,
+                displayName: param['x-title'] || param.name,
                 name: n8nName,
                 type,
                 default: defaultValue,
