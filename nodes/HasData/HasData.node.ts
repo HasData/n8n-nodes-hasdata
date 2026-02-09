@@ -7,6 +7,7 @@ import {
     INodeProperties,
     INodeType,
     INodeTypeDescription,
+    NodeApiError,
 } from 'n8n-workflow';
 
 import { airbnbFields, airbnbOperations } from './descriptions/AirbnbDescription';
@@ -276,6 +277,9 @@ export class HasData implements INodeType {
                         qs,
                         body: method === 'POST' ? body : undefined,
                         json: true,
+                        headers: {
+                            'x-request-source': 'n8n',
+                        },
                     },
                 );
 
@@ -290,7 +294,7 @@ export class HasData implements INodeType {
                     returnData.push({ json: { error: error.message } });
                     continue;
                 }
-                throw error;
+                throw new NodeApiError(this.getNode(), error as any);
             }
         }
 
