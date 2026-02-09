@@ -7,7 +7,7 @@ import {
     INodeProperties,
     INodeType,
     INodeTypeDescription,
-    NodeApiError,
+    NodeOperationError,
 } from 'n8n-workflow';
 
 import { airbnbFields, airbnbOperations } from './descriptions/AirbnbDescription';
@@ -291,10 +291,20 @@ export class HasData implements INodeType {
 
             } catch (error) {
                 if (this.continueOnFail()) {
-                    returnData.push({ json: { error: error.message } });
+                    returnData.push({
+                        json: {
+                            error: error.message,
+                        },
+                        pairedItem: {
+                            item: i
+                        }
+                    });
                     continue;
                 }
-                throw new NodeApiError(this.getNode(), error as any);
+
+                throw new NodeOperationError(this.getNode(), error, {
+                    itemIndex: i
+                });
             }
         }
 
